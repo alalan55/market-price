@@ -4,7 +4,7 @@
       <span>Market Price.</span>
     </div>
     <div class="cart">
-      <!-- <img scr="/imgs/cart.svg" alt="Imagem de carrinho"/> -->
+      <img src="/imgs/cart.svg" alt="" />
     </div>
   </nav>
 </template>
@@ -36,8 +36,21 @@ export default {
   }
 
   .cart {
-    border: 2px solid red;
+    // border: 2px solid red;
     width: 50px;
+
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      width: 90%;
+      height: 90%;
+      object-fit: contain;
+      image-rendering: pixelated;
+    }
   }
 }
 </style>
