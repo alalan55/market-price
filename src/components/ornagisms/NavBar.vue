@@ -25,12 +25,13 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $padding-05;
+  padding: $padding-1-5;
 
   .logo {
     span {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 1.2em;
+      color: $pink-1;
     }
   }
 

@@ -2,9 +2,7 @@
   <div class="home-template">
     <div class="button-product">
       <div class="title">
-        <span>
-          Adicionar produto
-        </span>
+        <span> Adicionar produto </span>
       </div>
     </div>
   </div>
@@ -12,31 +10,42 @@
 
 <script>
 export default {
-  setup(){}
-}
+  setup() {},
+};
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/scss/variables.scss';
+@import "@/assets/scss/variables.scss";
 .home-template {
   // border: 2px solid red;
   // min-height: 100%;
   width: 100%;
   height: 100%;
-  padding: $padding-1 $padding-05;
+  padding: $padding-1 $padding-1-5;
 
-  .button-product{
-    border: 1px solid red;
+  .button-product {
+    background: white;
     padding: $padding-1;
     border-radius: 5px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    max-width: 900px;
+    margin: 0 auto;
+    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
+    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
+    transition: 0.2s ease-in-out;
 
-    .title{
-      span{
-        font-weight:600;
+    &:hover {
+      -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
+      box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
+    }
+
+    .title {
+      span {
+        font-weight: 600;
+        color: $pink-1;
       }
     }
   }
