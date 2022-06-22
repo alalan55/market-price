@@ -1,20 +1,20 @@
 <template>
   <nav class="navBar">
-    <div class="logo">
+    <div class="logo" @click="goHome">
       <span>Market Price.</span>
     </div>
-    <div class="cart">
+    <div class="cart" @click="goResume">
       <img src="/imgs/cart.svg" alt="" />
     </div>
   </nav>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup>
+import { useRouter } from "vue-router";
+const router = useRouter();
+
+const goHome = () => router.push("/");
+const goResume = () => router.push("/resume");
 </script>
 
 <style lang="scss" scoped>
@@ -36,16 +36,15 @@ export default {
   }
 
   .cart {
-    // border: 2px solid red;
+    cursor: pointer;
     width: 50px;
-
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img{
+    img {
       width: 90%;
       height: 90%;
       object-fit: contain;
