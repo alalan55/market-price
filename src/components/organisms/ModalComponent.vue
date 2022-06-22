@@ -6,18 +6,21 @@
           <div class="row">
             <label
               >Produto
-              <input type="text" />
+              <input type="text" v-model="productInfo.title" />
             </label>
           </div>
           <div class="row">
             <label
               >Quantidade
-              <input type="number" />
+              <input type="number" v-model="productInfo.quantity" />
             </label>
             <label
               >Valor
-              <input type="number" />
+              <input type="number" v-model="productInfo.value" />
             </label>
+          </div>
+          <div class="btn-save">
+            <button @click.prevent="saveProduct">Salvar</button>
           </div>
         </form>
       </div>
@@ -26,7 +29,15 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 const emits = defineEmits(["close"]);
+
+const productInfo = ref({});
+
+const saveProduct = () => {
+  const id = new Date()
+  console.log({...productInfo.value, id: id});
+};
 </script>
 
 <style lang="scss" scoped>
@@ -47,7 +58,7 @@ const emits = defineEmits(["close"]);
     max-width: 100%;
     position: relative;
     background: white;
-    padding: $padding-1-5;
+    padding: $padding-2;
     border-radius: 5px;
     -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
     box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
@@ -84,6 +95,19 @@ const emits = defineEmits(["close"]);
               outline: none;
             }
           }
+        }
+      }
+
+      .btn-save {
+        button {
+          cursor: pointer;
+          width: 100%;
+          padding: $padding-1;
+          border-radius: 5px;
+          font-weight: 600;
+          color: white;
+          background: $pink-1;
+          border: none;
         }
       }
     }
