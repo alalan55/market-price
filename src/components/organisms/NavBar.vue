@@ -28,6 +28,7 @@ const goResume = () => router.push("/resume");
   padding: $padding-1-5;
 
   .logo {
+    cursor: pointer;
     span {
       font-weight: 800;
       font-size: 1.2em;
