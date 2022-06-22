@@ -19,6 +19,9 @@ export default {
 
 .product-card {
   padding: $padding-05;
+//   border: 1px solid white;
+background: white;
+  border-radius: 5px;
 
   .title {
     span {

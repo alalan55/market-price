@@ -26,13 +26,13 @@ export default {
   cursor: pointer;
   max-width: 900px;
   margin: 0 auto;
-  -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
-  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
+  -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.07);
+  box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.07);
   transition: 0.2s ease-in-out;
 
   &:hover {
-    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
-    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
+    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.06);
+    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.06);
   }
 
   .title {

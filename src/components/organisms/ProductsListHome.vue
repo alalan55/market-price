@@ -46,12 +46,12 @@ import ProductCard from "@/components/atoms/ProductCard.vue";
 @import "@/assets/scss/variables.scss";
 
 .products-list {
-  // height: calc(100vw - 120px);
-  //   max-height: 100%;
   height: 65vh;
   overflow-y: auto;
-
   padding: 0;
+  background: $pink-3;
+  padding: .5rem;
+  border-radius: 5px;
 
   li {
     list-style: none;
