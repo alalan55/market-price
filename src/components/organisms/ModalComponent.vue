@@ -2,6 +2,9 @@
   <teleport to="#modal">
     <div class="modal-bg">
       <div class="modal-container">
+        <div class="btn-close" @click="$emit('close')">
+           <img src="/imgs/close.svg" alt="" />
+        </div>
         <form>
           <div class="row">
             <label
@@ -35,8 +38,8 @@ const emits = defineEmits(["close"]);
 const productInfo = ref({});
 
 const saveProduct = () => {
-  const id = new Date()
-  console.log({...productInfo.value, id: id});
+  const id = new Date();
+  console.log({ ...productInfo.value, id: id });
 };
 </script>
 
@@ -109,6 +112,25 @@ const saveProduct = () => {
           background: $pink-1;
           border: none;
         }
+      }
+    }
+
+    .btn-close{
+      position: absolute;
+      right: 25px;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      img{
+        width: 90%;
+        height: 90%;
+        object-fit: contain;
+        image-rendering: pixelated;
       }
     }
   }
