@@ -3,7 +3,7 @@
     <div class="modal-bg">
       <div class="modal-container">
         <div class="btn-close" @click="$emit('close')">
-           <img src="/imgs/close.svg" alt="" />
+          <img src="/imgs/close.svg" alt="" />
         </div>
         <form>
           <div class="row">
@@ -115,7 +115,7 @@ const saveProduct = () => {
       }
     }
 
-    .btn-close{
+    .btn-close {
       position: absolute;
       right: 25px;
       top: 20px;
@@ -126,7 +126,7 @@ const saveProduct = () => {
       justify-content: center;
       cursor: pointer;
 
-      img{
+      img {
         width: 90%;
         height: 90%;
         object-fit: contain;

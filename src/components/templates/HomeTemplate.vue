@@ -1,7 +1,8 @@
 <template>
   <div class="home-template">
-    <ButtonAddProduct @showModal="showModal" />
     <Modal v-if="isModalOpen" @close="closeModal" />
+    <ProductList class="list" />
+    <ButtonAddProduct @showModal="showModal" />
   </div>
 </template>
 
@@ -9,6 +10,7 @@
 import { ref } from "vue";
 import ButtonAddProduct from "@/components/atoms/ButtonAddProduct.vue";
 import Modal from "@/components/organisms/ModalComponent.vue";
+import ProductList from "@/components/organisms/ProductsListHome.vue";
 
 const isModalOpen = ref(false);
 
@@ -27,5 +29,10 @@ const closeModal = () => {
   width: 100%;
   height: 100%;
   padding: $padding-1 $padding-1-5;
+ 
+
+  .list {
+    margin: 2rem 0;
+  }
 }
 </style>
