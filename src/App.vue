@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
+import NavBarVue from "./components/ornagisms/NavBar.vue";
 </script>
 
 <template>
@@ -21,8 +22,18 @@ import { RouterLink, RouterView } from "vue-router";
       </nav>
     </div>
   </header> -->
+  <NavBarVue />
 
-  <RouterView />
+  <div class="content">
+    <RouterView />
+  </div>
 </template>
 
+<style lang="scss" scoped>
+@import "@/assets/scss/variables.scss";
 
+.content {
+  // border: 2px solid blue;
+  height: calc(100vh - $navbarHeight);
+}
+</style>
