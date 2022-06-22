@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import NavBarVue from "./components/ornagisms/NavBar.vue";
+import NavBarVue from "@/components/organisms/NavBar.vue";
 </script>
 
 <template>
@@ -38,7 +38,6 @@ import NavBarVue from "./components/ornagisms/NavBar.vue";
   background: $bg;
 
   .content {
-    // border: 2px solid blue;
     height: calc(100vh - $navbarHeight);
   }
 }
