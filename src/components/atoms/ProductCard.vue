@@ -1,10 +1,10 @@
 <template>
   <div class="product-card">
     <div class="title">
-      <span>Arroz</span>
+      <span>{{ props.info.title }}</span>
     </div>
     <div class="value">
-      <span> R$5.50 </span>
+      <span> {{ numberToLocal(props.info.value) }}</span>
 
       <div class="unit">
         <span>Unidade</span>
@@ -13,11 +13,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
+<script setup>
+const props = defineProps({ info: Object });
+
+const numberToLocal = (number) => {
+  let format = { minimumFractionDigits: 2, style: "currency", currency: "BRL" };
+  return number.toLocaleString("pt-BR", format);
 };
 </script>
 
@@ -26,12 +27,12 @@ export default {
 
 .product-card {
   padding: $padding-05;
-  //   border: 1px solid white;
   background: white;
   border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 
   .title {
     span {
@@ -53,6 +54,15 @@ export default {
 
       span {
         font-size: 0.55em;
+      }
+    }
+  }
+
+  @media (max-width: 300px) {
+    .title,
+    .value {
+      span {
+        font-size: 0.9em;
       }
     }
   }

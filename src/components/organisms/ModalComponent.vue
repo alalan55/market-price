@@ -33,13 +33,14 @@
 
 <script setup>
 import { ref } from "vue";
-const emits = defineEmits(["close"]);
+const emits = defineEmits(["close", "action"]);
 
 const productInfo = ref({});
 
 const saveProduct = () => {
   const id = new Date();
-  console.log({ ...productInfo.value, id: id });
+  let updatedProduct = { ...productInfo.value, id: id };
+  emits("action", updatedProduct);
 };
 </script>
 
