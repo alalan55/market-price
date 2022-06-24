@@ -17,7 +17,6 @@ import ProductCard from "@/components/atoms/ProductCard.vue";
 
 const products = ref([]);
 const buyStore = useBuyStore();
-
 products.value = buyStore.$cartProducts;
 </script>
 
