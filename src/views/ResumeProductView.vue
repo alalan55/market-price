@@ -1,8 +1,7 @@
 <template>
-   <ResumeProductsTemplate/>
+  <ResumeProductsTemplate />
 </template>
 
 <script setup>
-import ResumeProductsTemplate from '@/components/templates/ResumeProductsTemplate.vue'
-
+import ResumeProductsTemplate from "@/components/templates/ResumeProductsTemplate.vue";
 </script>

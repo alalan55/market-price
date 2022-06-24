@@ -26,7 +26,7 @@ const numberToLocal = (number) => {
 @import "@/assets/scss/variables.scss";
 
 .product-card {
-  padding: $padding-05;
+  padding: $padding-1 $padding-05;
   background: white;
   border-radius: 5px;
   display: flex;

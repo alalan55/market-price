@@ -8,12 +8,12 @@
 
 <script setup>
 import { ref } from "vue";
-import {useBuyStore} from '@/stores/buy'
+import { useBuyStore } from "@/stores/buy";
 import ButtonAddProduct from "@/components/atoms/ButtonAddProduct.vue";
 import Modal from "@/components/organisms/ModalComponent.vue";
 import ProductList from "@/components/organisms/ProductsListHome.vue";
 
-const buyStore = useBuyStore()
+const buyStore = useBuyStore();
 
 const isModalOpen = ref(false);
 
@@ -25,9 +25,8 @@ const closeModal = () => {
 };
 
 const saveProduct = (product) => {
-  buyStore.BUY_PRODUCT(product)
-  isModalOpen.value = false
-  
+  buyStore.BUY_PRODUCT(product);
+  isModalOpen.value = false;
 };
 </script>
 

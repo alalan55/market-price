@@ -32,22 +32,18 @@ products.value = buyStore.$cartProducts;
   padding: 0.5rem;
   border-radius: 5px;
 
-  /* width */
   &::-webkit-scrollbar {
     width: 7px;
   }
 
-  /* Track */
   &::-webkit-scrollbar-track {
     background: #f1f1f1;
   }
 
-  /* Handle */
   &::-webkit-scrollbar-thumb {
     background: #888;
   }
 
-  /* Handle on hover */
   &::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
