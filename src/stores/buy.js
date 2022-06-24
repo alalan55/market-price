@@ -14,6 +14,18 @@ export const useBuyStore = defineStore({
 
   getters: {
     $cartProducts: (state) => state.cart,
+    $totalProductsValue: (state) => {
+      let total = 0;
+      let arr = [];
+
+      if (state.cart.length) {
+        arr = [...state.cart];
+        for (let item of arr) {
+          total += item.quantity * item.value;
+        }
+      }
+      return total;
+    },
   },
 });
 
