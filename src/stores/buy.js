@@ -8,12 +8,26 @@ export const useBuyStore = defineStore({
   actions: {
     BUY_PRODUCT(product) {
       this.cart.push(product);
-      // console.log('chegou aqui', product)
+    },
+    CLEAN_CART() {
+      this.cart = [];
     },
   },
 
   getters: {
     $cartProducts: (state) => state.cart,
+    $totalProductsValue: (state) => {
+      let total = 0;
+      let arr = [];
+
+      if (state.cart.length) {
+        arr = [...state.cart];
+        for (let item of arr) {
+          total += item.quantity * item.value;
+        }
+      }
+      return total;
+    },
   },
 });
 

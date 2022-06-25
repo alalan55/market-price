@@ -14,12 +14,8 @@
 </template>
 
 <script setup>
+import { numberToLocal } from "@/utils/formatters";
 const props = defineProps({ info: Object });
-
-const numberToLocal = (number) => {
-  let format = { minimumFractionDigits: 2, style: "currency", currency: "BRL" };
-  return number.toLocaleString("pt-BR", format);
-};
 </script>
 
 <style lang="scss" scoped>
