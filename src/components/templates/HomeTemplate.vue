@@ -17,12 +17,9 @@ const buyStore = useBuyStore();
 
 const isModalOpen = ref(false);
 
-const showModal = () => {
-  isModalOpen.value = true;
-};
-const closeModal = () => {
-  isModalOpen.value = false;
-};
+const showModal = () => (isModalOpen.value = true);
+
+const closeModal = () => (isModalOpen.value = false);
 
 const saveProduct = (product) => {
   buyStore.BUY_PRODUCT(product);
