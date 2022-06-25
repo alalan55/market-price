@@ -9,6 +9,9 @@ export const useBuyStore = defineStore({
     BUY_PRODUCT(product) {
       this.cart.push(product);
     },
+    CLEAN_CART() {
+      this.cart = [];
+    },
   },
 
   getters: {
