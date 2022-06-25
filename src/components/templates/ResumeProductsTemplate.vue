@@ -6,13 +6,19 @@
     <div class="content">
       <ProductsListResume />
     </div>
-    <TButton title="Limpar carrinho" />
+    <TButton title="Limpar carrinho" v-if="hasProducts" />
   </div>
 </template>
 
 <script setup>
+import {computed} from 'vue'
 import ProductsListResume from "@/components/organisms/ProducsListResume.vue";
 import TButton from "@/components/T/TButton.vue";
+import { useBuyStore } from "@/stores/buy";
+
+const useStore = useBuyStore();
+
+const hasProducts = computed(() => useStore.$cartProducts.length)
 </script>
 
 <style lang="scss" scoped>
