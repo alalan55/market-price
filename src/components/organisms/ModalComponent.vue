@@ -3,7 +3,7 @@
     <div class="modal-bg">
       <div class="modal-container">
         <div class="btn-close" @click="$emit('close')">
-          <img src="/imgs/close.svg" alt="" />
+          <img src="/imgs/close.svg" alt="Botão de fechar" />
         </div>
         <form>
           <div class="row">

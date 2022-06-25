@@ -36,7 +36,6 @@ const cleanCart = useStore.CLEAN_CART;
   }
 
   .content {
-    border: 2px solid red;
     margin: 0.5rem 0 0.5rem;
   }
 }
