@@ -3,23 +3,29 @@
     <div class="title">
       <span class="label">Produto: </span>
       <span>
-        <strong>Laranja</strong>
+        <strong>{{ props.product.title }}</strong>
       </span>
     </div>
 
     <div class="price">
       <span class="label">Preço Unit: </span>
-      <span><strong>R$ 5,90</strong></span>
+      <span
+        ><strong>{{ numberToLocal(props.product.value) }}</strong></span
+      >
     </div>
 
     <div class="qtd">
       <span class="label">Qtd: </span>
-      <span><strong>3</strong></span>
+      <span
+        ><strong>{{ props.product.quantity }}</strong></span
+      >
     </div>
 
     <div class="total">
-      <span class="label">Tot: </span> 
-      <span><strong>R$30,00</strong></span>
+      <span class="label">Tot: </span>
+      <span
+        ><strong>{{ total }}</strong></span
+      >
     </div>
 
     <div class="action">
@@ -30,7 +36,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { computed } from "vue";
+import { numberToLocal } from "@/utils/formatters";
+const props = defineProps({
+  product: { type: Object, required: true },
+});
+
+const total = computed(() => {
+  let tot = props.product.value * props.product.quantity;
+  return numberToLocal(tot);
+});
+</script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/variables.scss";

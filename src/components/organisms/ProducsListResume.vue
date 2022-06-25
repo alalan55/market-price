@@ -1,14 +1,12 @@
 <template>
   <div class="list-resume">
     <div class="list">
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
-      <ProductItemResume class="item" />
+      <ProductItemResume
+        class="item"
+        v-for="product of products"
+        :key="product.id"
+        :product="product"
+      />
     </div>
 
     <div class="bottom">
@@ -20,11 +18,16 @@
 </template>
 
 <script setup>
+import { ref } from "vue";
 import { numberToLocal } from "@/utils/formatters";
 import { useBuyStore } from "@/stores/buy";
 import ProductItemResume from "@/components/organisms/ProductItemResume.vue";
 
+const products = ref([]);
+
 const useStore = useBuyStore();
+
+products.value = useStore.$cartProducts;
 </script>
 
 <style lang="scss" scoped>
