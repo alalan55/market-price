@@ -64,19 +64,8 @@ const total = computed(() => {
   flex-wrap: wrap;
   gap: 0.5rem;
 
-  @media (max-width: 450px) {
-    flex-direction: column;
-
-    div {
-      width: 100%;
-      &:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
-
   div {
-    flex: 1 1 auto;
+    flex: 1 1 200px;
     span {
       font-size: 0.9em;
     }
@@ -104,6 +93,18 @@ const total = computed(() => {
         width: 90%;
         height: 90%;
         object-fit: cover;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+
+    div {
+      width: 100%;
+      flex: 1 1 auto;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
       }
     }
   }

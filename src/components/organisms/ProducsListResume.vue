@@ -66,11 +66,13 @@ products.value = useStore.$cartProducts;
 
   .bottom {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     width: 100%;
     padding: $padding-05;
     text-align: right;
     background: $pink-1;
+    color: white;
+    height: 45px;
     //  background-color: rgba(0, 0, 0, 0.9);
     // -webkit-backdrop-filter: blur(15px);
     // backdrop-filter: blur(15px);
