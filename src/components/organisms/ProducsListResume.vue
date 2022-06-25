@@ -54,7 +54,7 @@ const useStore = useBuyStore();
       background: #555;
     }
     .item {
-      margin-bottom: 0.5rem;
+      margin-bottom: 1.3rem;
       &:last-child {
         margin-bottom: 2.6rem;
       }
