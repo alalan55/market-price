@@ -11,7 +11,8 @@
 
     <div class="bottom">
       <span>
-        Total: <strong>{{ numberToLocal(useStore.$totalProductsValue) }}</strong></span
+        Total:
+        <strong>{{ numberToLocal(useStore.$totalProductsValue) }}</strong></span
       >
     </div>
   </div>
