@@ -6,11 +6,13 @@
     <div class="content">
       <ProductsListResume />
     </div>
+    <TButton title="Limpar carrinho" />
   </div>
 </template>
 
 <script setup>
 import ProductsListResume from "@/components/organisms/ProducsListResume.vue";
+import TButton from "@/components/T/TButton.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -29,7 +31,7 @@ import ProductsListResume from "@/components/organisms/ProducsListResume.vue";
 
   .content {
     border: 2px solid red;
-    margin: .5rem 0 0 ;
+    margin: 0.5rem 0 0.5rem;
   }
 }
 </style>

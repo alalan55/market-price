@@ -1,17 +1,15 @@
 <template>
-  <div class="button-product" @click="$emit('showModal')">
+  <div class="button-product" @click="$emit('event')">
     <div class="title">
-      <span> Adicionar produto </span>
+      <span> {{ props.title }} </span>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
+<script setup>
+const props = defineProps({
+  title: { type: String, required: true, default: "Título do botão" },
+});
 </script>
 
 <style lang="scss" scoped>

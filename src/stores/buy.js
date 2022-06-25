@@ -8,7 +8,6 @@ export const useBuyStore = defineStore({
   actions: {
     BUY_PRODUCT(product) {
       this.cart.push(product);
-      // console.log('chegou aqui', product)
     },
   },
 
