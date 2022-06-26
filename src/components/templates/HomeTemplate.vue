@@ -38,6 +38,7 @@ const setProductToUpdate = (product) => {
 
 const updateProduct = (product) => {
   buyStore.UPDATE_PRODUCT(product);
+  buyStore.RESET_PRODUCT_TO_UPDATE();
   closeModal();
 };
 </script>
