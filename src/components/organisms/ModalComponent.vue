@@ -38,7 +38,7 @@ const emits = defineEmits(["close", "action"]);
 const productInfo = ref({});
 
 const saveProduct = () => {
-  const id = new Date();
+  const id = new Date().getTime();
   let updatedProduct = { ...productInfo.value, id: id };
   emits("action", updatedProduct);
 };

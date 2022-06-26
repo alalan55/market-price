@@ -28,7 +28,7 @@
       >
     </div>
 
-    <div class="action">
+    <div class="action" @click="deleteProduct(props.product)">
       <figure>
         <img src="/imgs/trash.svg" alt="Botão de apagar" />
       </figure>
@@ -39,14 +39,21 @@
 <script setup>
 import { computed } from "vue";
 import { numberToLocal } from "@/utils/formatters";
+import {useBuyStore} from '@/stores/buy'
 const props = defineProps({
   product: { type: Object, required: true },
 });
+
+const store = useBuyStore();
 
 const total = computed(() => {
   let tot = props.product.value * props.product.quantity;
   return numberToLocal(tot);
 });
+
+const deleteProduct = (product) =>{
+  store. DELETE_PRODUCT(product)
+}
 </script>
 
 <style lang="scss" scoped>

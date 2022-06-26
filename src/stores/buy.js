@@ -12,6 +12,10 @@ export const useBuyStore = defineStore({
     CLEAN_CART() {
       this.cart = [];
     },
+    DELETE_PRODUCT(product){
+      const productIndex = this.cart.findIndex(data => data.id === product.id)
+      this.cart.splice(productIndex, 1)
+    }
   },
 
   getters: {
