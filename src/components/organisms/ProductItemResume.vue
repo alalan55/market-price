@@ -39,7 +39,7 @@
 <script setup>
 import { computed } from "vue";
 import { numberToLocal } from "@/utils/formatters";
-import {useBuyStore} from '@/stores/buy'
+import { useBuyStore } from "@/stores/buy";
 const props = defineProps({
   product: { type: Object, required: true },
 });
@@ -51,9 +51,9 @@ const total = computed(() => {
   return numberToLocal(tot);
 });
 
-const deleteProduct = (product) =>{
-  store. DELETE_PRODUCT(product)
-}
+const deleteProduct = (product) => {
+  store.DELETE_PRODUCT(product);
+};
 </script>
 
 <style lang="scss" scoped>

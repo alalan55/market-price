@@ -1,7 +1,7 @@
 <template>
   <ul class="products-list" v-if="products.length">
     <li v-for="product in products" :key="product.id">
-      <ProductCard :info="product" />
+      <ProductCard :info="product" @action="action" />
     </li>
   </ul>
 
@@ -14,10 +14,15 @@
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
 import ProductCard from "@/components/atoms/ProductCard.vue";
+const emit = defineEmits(["action"]);
 
 const products = ref([]);
 const buyStore = useBuyStore();
 products.value = buyStore.$cartProducts;
+
+const action = (value) => {
+  emit("action", value);
+};
 </script>
 
 <style lang="scss" scoped>

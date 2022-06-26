@@ -1,7 +1,12 @@
 <template>
   <div class="home-template">
-    <Modal v-if="isModalOpen" @close="closeModal" @action="saveProduct" />
-    <ProductList class="list" />
+    <Modal
+      v-if="isModalOpen"
+      @close="closeModal"
+      @action="saveProduct"
+      @update="updateProduct"
+    />
+    <ProductList class="list" @action="setProductToUpdate" />
     <TButton @event="showModal" title="Adicionar Produto" />
   </div>
 </template>
@@ -23,7 +28,17 @@ const closeModal = () => (isModalOpen.value = false);
 
 const saveProduct = (product) => {
   buyStore.BUY_PRODUCT(product);
-  isModalOpen.value = false;
+  closeModal();
+};
+
+const setProductToUpdate = (product) => {
+  buyStore.SET_PRODUCT_TO_UPDATE(product);
+  showModal();
+};
+
+const updateProduct = (product) => {
+  buyStore.UPDATE_PRODUCT(product);
+  closeModal();
 };
 </script>
 

@@ -2,7 +2,7 @@
   <teleport to="#modal">
     <div class="modal-bg">
       <div class="modal-container">
-        <div class="btn-close" @click="$emit('close')">
+        <div class="btn-close" @click="close">
           <img src="/imgs/close.svg" alt="Botão de fechar" />
         </div>
         <form>
@@ -22,8 +22,11 @@
               <input type="number" v-model="productInfo.value" />
             </label>
           </div>
-          <div class="btn-save">
+          <div class="btn-save" v-if="!isEditing">
             <button @click.prevent="saveProduct">Salvar</button>
+          </div>
+          <div class="btn-save" v-else>
+            <button @click.prevent="updatedProduct">Atualizar</button>
           </div>
         </form>
       </div>
@@ -33,14 +36,30 @@
 
 <script setup>
 import { ref } from "vue";
-const emits = defineEmits(["close", "action"]);
+import { useBuyStore } from "@/stores/buy";
+
+const emits = defineEmits(["close", "action", "update"]);
+const store = useBuyStore();
 
 const productInfo = ref({});
+const isEditing = ref(false);
+
+if (store.$productToUpdate) {
+  productInfo.value = store.$productToUpdate;
+  isEditing.value = true;
+}
 
 const saveProduct = () => {
   const id = new Date().getTime();
   let updatedProduct = { ...productInfo.value, id: id };
   emits("action", updatedProduct);
+};
+
+const updatedProduct = () => emits("update", productInfo.value);
+
+const close = () => {
+  emits("close");
+  store.RESET_PRODUCT_TO_UPDATE();
 };
 </script>
 

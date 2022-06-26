@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card">
+  <div class="product-card" @click="$emit('action', props.info)">
     <div class="title">
       <span>{{ props.info.title }}</span>
     </div>

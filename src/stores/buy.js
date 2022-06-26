@@ -4,6 +4,7 @@ export const useBuyStore = defineStore({
   id: "buy",
   state: () => ({
     cart: [],
+    productToUpdate: null,
   }),
   actions: {
     BUY_PRODUCT(product) {
@@ -12,14 +13,29 @@ export const useBuyStore = defineStore({
     CLEAN_CART() {
       this.cart = [];
     },
-    DELETE_PRODUCT(product){
-      const productIndex = this.cart.findIndex(data => data.id === product.id)
-      this.cart.splice(productIndex, 1)
-    }
+    DELETE_PRODUCT(product) {
+      const productIndex = this.cart.findIndex(
+        (data) => data.id === product.id
+      );
+      this.cart.splice(productIndex, 1);
+    },
+    UPDATE_PRODUCT(product) {
+      const productIndex = this.cart.findIndex(
+        (data) => data.id === product.id
+      );
+      this.cart[productIndex] = product;
+    },
+    SET_PRODUCT_TO_UPDATE(product) {
+      this.productToUpdate = product;
+    },
+    RESET_PRODUCT_TO_UPDATE() {
+      this.productToUpdate = null;
+    },
   },
 
   getters: {
     $cartProducts: (state) => state.cart,
+    $productToUpdate: (state) => state.productToUpdate,
     $totalProductsValue: (state) => {
       let total = 0;
       let arr = [];
