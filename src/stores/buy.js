@@ -1,4 +1,5 @@
 import { defineStore, acceptHMRUpdate } from "pinia";
+import { toBigger } from "../utils/formatters";
 
 export const useBuyStore = defineStore({
   id: "buy",
@@ -34,7 +35,7 @@ export const useBuyStore = defineStore({
   },
 
   getters: {
-    $cartProducts: (state) => state.cart,
+    $cartProducts: (state) => toBigger(state.cart, 'title'),
     $productToUpdate: (state) => state.productToUpdate,
     $totalProductsValue: (state) => {
       let total = 0;

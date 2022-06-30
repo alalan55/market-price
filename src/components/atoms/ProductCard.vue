@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="product-card" @click="$emit('action', props.info)"> -->
   <div class="product-card">
     <div class="product-card__wrapper">
       <div class="product-card__title">
@@ -19,17 +18,17 @@
         <div class="info">
           <div>
             <span class="info__texts"
-              ><strong>Quantidade:</strong> {{ props.info.quantity }}</span
+              >Quantidade: <strong>{{ props.info.quantity }}</strong></span
             >
           </div>
           <div>
             <span class="info__texts"
-              ><strong>Valor Unitário:</strong>
-              {{ numberToLocal(props.info.value) }}</span
+              >Valor Unitário:
+              <strong>{{ numberToLocal(props.info.value) }}</strong></span
             >
           </div>
           <div>
-            <span class="info__texts"><strong>Total:</strong> {{ total }}</span>
+            <span class="info__texts">Total: <strong>{{ total }}</strong></span>
           </div>
         </div>
         <div class="product-card__accordion__content--action">
@@ -46,6 +45,7 @@ import { numberToLocal } from "@/utils/formatters";
 import TButton from "@/components/T/TButton.vue";
 
 const props = defineProps({ info: Object });
+
 const isOpen = ref(false);
 
 const total = computed(() => {
@@ -135,15 +135,6 @@ const openAccordion = () => {
         }
       }
     }
-  }
-
-  @media (max-width: 300px) {
-    // .title,
-    // .value {
-    //   span {
-    //     font-size: 0.9em;
-    //   }
-    // }
   }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="button-product" @click="$emit('event')">
-    <div class="title">
+    <div class="button-product__title">
       <span> {{ props.title }} </span>
     </div>
   </div>
@@ -33,7 +33,7 @@ const props = defineProps({
     box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
   }
 
-  .title {
+  &__title {
     span {
       font-weight: 600;
       color: $pink-1;
