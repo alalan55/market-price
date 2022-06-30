@@ -1,34 +1,34 @@
 <template>
   <div class="item">
-    <div class="title">
+    <div class="item__title">
       <span class="label">Produto: </span>
       <span>
         <strong>{{ props.product.title }}</strong>
       </span>
     </div>
 
-    <div class="price">
-      <span class="label">Preço Unit: </span>
+    <div class="item__price">
+      <span class="item__price__label">Preço Unit: </span>
       <span
         ><strong>{{ numberToLocal(props.product.value) }}</strong></span
       >
     </div>
 
-    <div class="qtd">
-      <span class="label">Qtd: </span>
+    <div class="item__qtd">
+      <span class="item__qtd__label">Qtd: </span>
       <span
         ><strong>{{ props.product.quantity }}</strong></span
       >
     </div>
 
-    <div class="total">
-      <span class="label">Tot: </span>
+    <div class="item__total">
+      <span class="item__total__label">Tot: </span>
       <span
         ><strong>{{ total }}</strong></span
       >
     </div>
 
-    <div class="action" @click="deleteProduct(props.product)">
+    <div class="item--action" @click="deleteProduct(props.product)">
       <figure>
         <img src="/imgs/trash.svg" alt="Botão de apagar" />
       </figure>
@@ -77,12 +77,15 @@ const deleteProduct = (product) => {
       font-size: 0.9em;
     }
 
-    .label {
+    .item__price__label,
+    .item__total__label,
+    .item__qtd__label {
       font-size: 0.7em;
       font-weight: 600;
     }
   }
-  .action {
+  
+  &--action {
     display: flex;
     align-items: center;
     justify-content: flex-end;
