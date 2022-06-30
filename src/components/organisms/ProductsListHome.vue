@@ -32,7 +32,7 @@ const action = (value) => {
   height: 65vh;
   overflow-y: auto;
   padding: 0;
-  background: $pink-3;
+  // background: $pink-3;
   padding: 0.5rem;
   border-radius: 5px;
 

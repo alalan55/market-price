@@ -76,6 +76,7 @@ const close = () => {
   align-items: center;
   justify-content: center;
   padding: $padding-1-5;
+  z-index: 999;
 
   .modal-container {
     max-width: 100%;
