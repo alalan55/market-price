@@ -1,9 +1,9 @@
 <template>
   <nav class="navBar">
-    <div class="logo" @click="goHome">
+    <div class="navbar__logo" @click="goHome">
       <span>Market Price.</span>
     </div>
-    <div class="cart" @click="goResume">
+    <div class="navbar__cart" @click="goResume">
       <img src="/imgs/cart.svg" alt="" />
     </div>
   </nav>
@@ -27,7 +27,7 @@ const goResume = () => router.push("/resume");
   justify-content: space-between;
   padding: $padding-1-5;
 
-  .logo {
+  .navbar__logo {
     cursor: pointer;
     span {
       font-weight: 800;
@@ -36,7 +36,7 @@ const goResume = () => router.push("/resume");
     }
   }
 
-  .cart {
+  .navbar__cart {
     cursor: pointer;
     width: 50px;
     width: 40px;
