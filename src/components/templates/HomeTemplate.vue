@@ -1,5 +1,5 @@
 <template>
-  <div class="home-template">
+  <section class="home-template">
     <Modal
       v-if="isModalOpen"
       @close="closeModal"
@@ -8,7 +8,7 @@
     />
     <ProductList class="list" @action="setProductToUpdate" />
     <TButton @event="showModal" title="Adicionar Produto" />
-  </div>
+  </section>
 </template>
 
 <script setup>

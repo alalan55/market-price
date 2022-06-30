@@ -1,5 +1,5 @@
 <template>
-  <div class="resume">
+  <section class="resume">
     <div class="title">
       <span>Resumo</span>
     </div>
@@ -7,7 +7,7 @@
       <ProductsListResume />
     </div>
     <TButton title="Limpar carrinho" v-if="hasProducts" @event="cleanCart" />
-  </div>
+  </section>
 </template>
 
 <script setup>
