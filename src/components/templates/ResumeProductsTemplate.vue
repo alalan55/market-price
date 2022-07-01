@@ -23,6 +23,7 @@ import { useBuyStore } from "@/stores/buy";
 const useStore = useBuyStore();
 const hasProducts = computed(() => useStore.$cartProducts.length);
 const cleanCart = useStore.CLEAN_CART;
+
 </script>
 
 <style lang="scss" scoped>
