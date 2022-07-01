@@ -6,7 +6,7 @@
   </ul>
 
   <div class="empty-message" v-else>
-    <span> Nenhum produto adicionado! </span>
+    <span> Nenhum produto adicionado🙂</span>
   </div>
 </template>
 

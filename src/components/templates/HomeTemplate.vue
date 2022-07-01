@@ -7,14 +7,14 @@
       @update="updateProduct"
     />
     <ProductList class="list" @action="setProductToUpdate" />
-    <TButton @event="showModal" title="Adicionar Produto" />
+    <mp-button @event="showModal" title="Adicionar Produto" />
   </section>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
-import TButton from "@/components/T/TButton.vue";
+import mpButton from "@/components/atoms/mp-button.vue";
 import Modal from "@/components/organisms/ModalComponent.vue";
 import ProductList from "@/components/organisms/ProductsListHome.vue";
 

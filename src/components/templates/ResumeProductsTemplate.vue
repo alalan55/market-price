@@ -6,18 +6,18 @@
     <div class="resume__content">
       <ProductsListResume />
     </div>
-    <TButton title="Limpar carrinho" v-if="hasProducts" @event="cleanCart" />
+    <mp-button title="Limpar carrinho" v-if="hasProducts" @event="cleanCart" />
   </section>
 
   <section class="no-content" v-else>
-    <span> Nenhum produdo adicionado ainda:) </span>
+    <span> Nenhum produdo adicionado ainda🙂</span>
   </section>
 </template>
 
 <script setup>
 import { computed } from "vue";
 import ProductsListResume from "@/components/organisms/ProducsListResume.vue";
-import TButton from "@/components/T/TButton.vue";
+import mpButton from "@/components/atoms/mp-button.vue";
 import { useBuyStore } from "@/stores/buy";
 
 const useStore = useBuyStore();
@@ -44,11 +44,11 @@ const cleanCart = useStore.CLEAN_CART;
   }
 }
 
-.no-content{
+.no-content {
   text-align: center;
   padding: $padding-2 0;
 
-  span{
+  span {
     font-weight: 600;
     color: $pink-1;
     font-size: 1.1em;

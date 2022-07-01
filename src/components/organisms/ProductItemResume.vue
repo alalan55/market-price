@@ -84,7 +84,7 @@ const deleteProduct = (product) => {
       font-weight: 600;
     }
   }
-  
+
   &--action {
     display: flex;
     align-items: center;

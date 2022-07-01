@@ -22,7 +22,8 @@
         </div>
         <div>
           <span class="info__texts"
-            >Valor Unitário: <strong>{{ numberToLocal(props.info.value) }}</strong></span
+            >Valor Unitário:
+            <strong>{{ numberToLocal(props.info.value) }}</strong></span
           >
         </div>
         <div>
@@ -32,7 +33,7 @@
         </div>
       </div>
       <div class="product-card__accordion__content--action">
-        <TButton title="Atualizar" @event="$emit('action', props.info)" />
+        <mp-button title="Atualizar" @event="$emit('action', props.info)" />
       </div>
     </div>
   </div>
@@ -41,7 +42,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { numberToLocal } from "@/utils/formatters";
-import TButton from "@/components/T/TButton.vue";
+import mpButton from "@/components/atoms/mp-button.vue";
 
 const props = defineProps({ info: Object });
 
