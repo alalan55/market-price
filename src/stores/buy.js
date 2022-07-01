@@ -35,7 +35,7 @@ export const useBuyStore = defineStore({
   },
 
   getters: {
-    $cartProducts: (state) => toBigger(state.cart, 'title'),
+    $cartProducts: (state) => toBigger(state.cart, "title"),
     $productToUpdate: (state) => state.productToUpdate,
     $totalProductsValue: (state) => {
       let total = 0;

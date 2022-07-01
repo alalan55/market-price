@@ -6,14 +6,14 @@
   </ul>
 
   <div class="empty-message" v-else>
-    <span> Nenhum produto adicionado! </span>
+    <span> Nenhum produto adicionado🙂</span>
   </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
-import ProductCard from "@/components/atoms/ProductCard.vue";
+import ProductCard from "@/components/molecules/ProductCard.vue";
 const emit = defineEmits(["action"]);
 
 const products = ref([]);

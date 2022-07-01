@@ -14,26 +14,26 @@
     </div>
 
     <div class="product-card__accordion" v-show="isOpen">
-      <div class="product-card__accordion__content">
-        <div class="info">
-          <div>
-            <span class="info__texts"
-              >Quantidade: <strong>{{ props.info.quantity }}</strong></span
-            >
-          </div>
-          <div>
-            <span class="info__texts"
-              >Valor Unitário:
-              <strong>{{ numberToLocal(props.info.value) }}</strong></span
-            >
-          </div>
-          <div>
-            <span class="info__texts">Total: <strong>{{ total }}</strong></span>
-          </div>
+      <div class="product-card__accordion__info">
+        <div>
+          <span class="info__texts"
+            >Quantidade: <strong>{{ props.info.quantity }}</strong></span
+          >
         </div>
-        <div class="product-card__accordion__content--action">
-          <TButton title="Atualizar" @event="$emit('action', props.info)" />
+        <div>
+          <span class="info__texts"
+            >Valor Unitário:
+            <strong>{{ numberToLocal(props.info.value) }}</strong></span
+          >
         </div>
+        <div>
+          <span class="info__texts"
+            >Total: <strong>{{ total }}</strong></span
+          >
+        </div>
+      </div>
+      <div class="product-card__accordion__content--action">
+        <mp-button title="Atualizar" @event="$emit('action', props.info)" />
       </div>
     </div>
   </div>
@@ -42,7 +42,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { numberToLocal } from "@/utils/formatters";
-import TButton from "@/components/T/TButton.vue";
+import mpButton from "@/components/atoms/mpButton.vue";
 
 const props = defineProps({ info: Object });
 
@@ -66,8 +66,8 @@ const openAccordion = () => {
     padding: $padding-1 $padding-05;
     background: white;
     border-radius: 5px;
-    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.03);
-    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.03);
+    -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
+    box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
     position: relative;
     z-index: 100;
 
@@ -107,30 +107,21 @@ const openAccordion = () => {
     }
   }
   &__accordion {
-    margin: 0 auto;
-    width: 95%;
-    min-height: 29vh;
+    margin-top: -5% !important;
     border-radius: 0px 0px 5px 5px;
-    position: relative;
+    width: 100%;
+    background: white;
+    border-radius: 5px;
+    padding: $padding-1-5 $padding-05 $padding-1;
 
-    &__content {
-      position: absolute;
-      min-height: 100%;
-      width: 100%;
-      background: white;
-      border-radius: 5px;
-      top: -5px;
-      padding: $padding-1-5 $padding-05 $padding-1;
-
-      .info {
-        & > div {
-          margin: 0 0 0.8rem;
-          .info__texts {
-            font-size: 0.85em;
-            font-weight: 500;
-            strong {
-              font-weight: 700;
-            }
+    &__info {
+      & > div {
+        margin: 0 0 0.8rem;
+        .info__texts {
+          font-size: 0.85em;
+          font-weight: 500;
+          strong {
+            font-weight: 700;
           }
         }
       }

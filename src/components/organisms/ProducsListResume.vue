@@ -22,7 +22,7 @@
 import { ref } from "vue";
 import { numberToLocal } from "@/utils/formatters";
 import { useBuyStore } from "@/stores/buy";
-import ProductItemResume from "@/components/organisms/ProductItemResume.vue";
+import ProductItemResume from "@/components/molecules/ProductItemResume.vue";
 
 const products = ref([]);
 

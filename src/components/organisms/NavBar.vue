@@ -1,10 +1,10 @@
 <template>
   <nav class="navBar">
-    <div class="navbar__logo" @click="goHome">
+    <div class="navBar__logo" @click="goRoute(`home`)">
       <span>Market Price.</span>
     </div>
-    <div class="navbar__cart" @click="goResume">
-      <img src="/imgs/cart.svg" alt="" />
+    <div class="navBar__cart" @click="goRoute(`resume`)">
+      <img src="/imgs/cart.svg" alt="Carrinho de compras" />
     </div>
   </nav>
 </template>
@@ -12,9 +12,7 @@
 <script setup>
 import { useRouter } from "vue-router";
 const router = useRouter();
-
-const goHome = () => router.push("/");
-const goResume = () => router.push("/resume");
+const goRoute = (path) => router.push({ name: path });
 </script>
 
 <style lang="scss" scoped>
@@ -27,7 +25,7 @@ const goResume = () => router.push("/resume");
   justify-content: space-between;
   padding: $padding-1-5;
 
-  .navbar__logo {
+  &__logo {
     cursor: pointer;
     span {
       font-weight: 800;
@@ -36,7 +34,7 @@ const goResume = () => router.push("/resume");
     }
   }
 
-  .navbar__cart {
+  &__cart {
     cursor: pointer;
     width: 50px;
     width: 40px;
