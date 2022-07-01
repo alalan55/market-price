@@ -17,7 +17,7 @@
 <script setup>
 import { computed } from "vue";
 import ProductsListResume from "@/components/organisms/ProducsListResume.vue";
-import mpButton from "@/components/atoms/mp-button.vue";
+import mpButton from "@/components/atoms/mpButton.vue";
 import { useBuyStore } from "@/stores/buy";
 
 const useStore = useBuyStore();

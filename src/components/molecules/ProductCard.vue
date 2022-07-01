@@ -42,7 +42,7 @@
 <script setup>
 import { ref, computed } from "vue";
 import { numberToLocal } from "@/utils/formatters";
-import mpButton from "@/components/atoms/mp-button.vue";
+import mpButton from "@/components/atoms/mpButton.vue";
 
 const props = defineProps({ info: Object });
 
