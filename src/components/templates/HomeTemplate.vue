@@ -15,7 +15,7 @@
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
 import mpButton from "@/components/atoms/mp-button.vue";
-import Modal from "@/components/organisms/ModalComponent.vue";
+import Modal from "@/components/molecules/ModalComponent.vue";
 import ProductList from "@/components/organisms/ProductsListHome.vue";
 
 const buyStore = useBuyStore();
