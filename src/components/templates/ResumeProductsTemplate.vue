@@ -1,12 +1,16 @@
 <template>
-  <section class="resume">
-    <div class="title">
+  <section class="resume" v-if="hasProducts">
+    <div class="resume__title">
       <span>Resumo</span>
     </div>
-    <div class="content">
+    <div class="resume__content">
       <ProductsListResume />
     </div>
     <TButton title="Limpar carrinho" v-if="hasProducts" @event="cleanCart" />
+  </section>
+
+  <section class="no-content" v-else>
+    <span> Nenhum produdo adicionado ainda:) </span>
   </section>
 </template>
 
@@ -27,7 +31,7 @@ const cleanCart = useStore.CLEAN_CART;
 .resume {
   padding: $padding-1 $padding-1-5;
 
-  .title {
+  &__title {
     span {
       font-weight: 800;
       font-size: 1.3em;
@@ -35,8 +39,19 @@ const cleanCart = useStore.CLEAN_CART;
     }
   }
 
-  .content {
+  &__content {
     margin: 0.5rem 0 0.5rem;
+  }
+}
+
+.no-content{
+  text-align: center;
+  padding: $padding-2 0;
+
+  span{
+    font-weight: 600;
+    color: $pink-1;
+    font-size: 1.1em;
   }
 }
 </style>
