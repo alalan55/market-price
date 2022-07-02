@@ -4,16 +4,14 @@
       <ProductCard :info="product" @action="action" />
     </li>
   </ul>
-
-  <div class="empty-message" v-else>
-    <span> Nenhum produto adicionado🙂</span>
-  </div>
+  <NoProduct v-else />
 </template>
 
 <script setup>
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
 import ProductCard from "@/components/molecules/ProductCard.vue";
+import NoProduct from "@/components/atoms/NoProduct.vue";
 const emit = defineEmits(["action"]);
 
 const products = ref([]);
@@ -56,15 +54,6 @@ const action = (value) => {
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
-  }
-}
-
-.empty-message {
-  text-align: center;
-  span {
-    font-size: 1.1em;
-    font-weight: 700;
-    color: $pink-1;
   }
 }
 </style>
