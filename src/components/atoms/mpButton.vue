@@ -17,7 +17,7 @@ const props = defineProps({
 
 .button-product {
   background: white;
-  padding: $padding-1;
+  padding: $space-1;
   border-radius: 5px;
   display: flex;
   align-items: center;

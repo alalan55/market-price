@@ -60,7 +60,7 @@ const deleteProduct = (product) => {
 @import "@/assets/scss/utilities";
 
 .item {
-  padding: $padding-1 $padding-05;
+  padding: $space-1 $space-0-5;
   background: white;
   border-radius: 5px;
   display: flex;

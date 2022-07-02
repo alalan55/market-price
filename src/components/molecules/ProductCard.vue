@@ -63,7 +63,7 @@ const openAccordion = () => {
 
 .product-card {
   &__wrapper {
-    padding: $padding-1 $padding-05;
+    padding: $space-1 $space-0-5;
     background: white;
     border-radius: 5px;
     -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.04);
@@ -88,7 +88,7 @@ const openAccordion = () => {
       align-items: center;
       justify-content: flex-end;
       height: 100%;
-      padding: 0 $padding-05;
+      padding: 0 $space-0-5;
 
       figure {
         width: 30px;
@@ -112,7 +112,7 @@ const openAccordion = () => {
     width: 100%;
     background: white;
     border-radius: 5px;
-    padding: $padding-1-5 $padding-05 $padding-1;
+    padding: $space-1-5 $space-0-5 $space-1;
 
     &__info {
       & > div {

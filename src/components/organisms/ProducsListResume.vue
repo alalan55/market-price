@@ -69,7 +69,7 @@ products.value = useStore.$cartProducts;
     position: absolute;
     bottom: -1px;
     width: 100%;
-    padding: $padding-05;
+    padding: $space-0-5;
     text-align: right;
     background: $pink-1;
     color: white;
