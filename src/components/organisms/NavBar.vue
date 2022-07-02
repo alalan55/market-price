@@ -23,7 +23,7 @@ const goRoute = (path) => router.push({ name: path });
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: $padding-1-5;
+  padding: $space-1-5;
 
   &__logo {
     cursor: pointer;

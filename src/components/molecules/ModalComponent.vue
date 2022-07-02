@@ -76,14 +76,14 @@ const close = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: $padding-1-5;
+  padding: $space-1-5;
   z-index: 999;
 
   .modal-container {
     max-width: 100%;
     position: relative;
     background: white;
-    padding: $padding-2;
+    padding: $space-2;
     border-radius: 5px;
     -webkit-box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
     box-shadow: 5px 5px 12px 5px rgba(0, 0, 0, 0.01);
@@ -104,13 +104,13 @@ const close = () => {
           flex: 1 1 100px;
           display: flex;
           flex-direction: column;
-          padding-bottom: $padding-05;
+          padding-bottom: $space-0-5;
           color: $pink-2;
 
           input {
-            margin-top: $padding-05;
+            margin-top: $space-0-5;
             width: 100%;
-            padding: $padding-05;
+            padding: $space-0-5;
             border-radius: 5px;
             border: 1px solid $pink-2;
             color: $pink-2;
@@ -127,7 +127,7 @@ const close = () => {
         button {
           cursor: pointer;
           width: 100%;
-          padding: $padding-1;
+          padding: $space-1;
           border-radius: 5px;
           font-weight: 600;
           color: white;

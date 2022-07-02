@@ -49,7 +49,7 @@ const updateProduct = (product) => {
 .home-template {
   width: 100%;
   height: 100%;
-  padding: $padding-1 $padding-1-5;
+  padding: $space-1 $space-1-5;
 
   .list {
     margin: 2rem 0;

@@ -29,7 +29,7 @@ const cleanCart = useStore.CLEAN_CART;
 @import "@/assets/scss/utilities";
 
 .resume {
-  padding: $padding-1 $padding-1-5;
+  padding: $space-1 $space-1-5;
 
   &__title {
     span {
@@ -46,7 +46,7 @@ const cleanCart = useStore.CLEAN_CART;
 
 .no-content {
   text-align: center;
-  padding: $padding-2 0;
+  padding: $space-2 0;
 
   span {
     font-weight: 600;
