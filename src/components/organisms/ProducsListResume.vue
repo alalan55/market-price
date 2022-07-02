@@ -1,6 +1,6 @@
 <template>
-  <div class="list-resume">
-    <div class="list">
+  <div class="products-resume">
+    <div class="products-resume__list">
       <ProductItemResume
         class="item"
         v-for="product of products"
@@ -9,7 +9,7 @@
       />
     </div>
 
-    <div class="bottom">
+    <div class="products-resume__bottom">
       <span>
         TOTAL:
         <strong>{{ numberToLocal(useStore.$totalProductsValue) }}</strong></span
@@ -34,11 +34,11 @@ products.value = useStore.$cartProducts;
 <style lang="scss" scoped>
 @import "@/assets/scss/utilities";
 
-.list-resume {
+.products-resume {
   height: 65vh;
   position: relative;
 
-  .list {
+  &__list {
     overflow-y: auto;
     height: 100%;
 
@@ -65,7 +65,7 @@ products.value = useStore.$cartProducts;
     }
   }
 
-  .bottom {
+  &__bottom {
     position: absolute;
     bottom: -1px;
     width: 100%;
@@ -74,10 +74,6 @@ products.value = useStore.$cartProducts;
     background: $pink-1;
     color: white;
     height: 45px;
-    //  background-color: rgba(0, 0, 0, 0.9);
-    // -webkit-backdrop-filter: blur(15px);
-    // backdrop-filter: blur(15px);
-
     span {
       font-size: 1.2em;
     }

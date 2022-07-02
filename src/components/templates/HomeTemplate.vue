@@ -6,7 +6,7 @@
       @action="saveProduct"
       @update="updateProduct"
     />
-    <ProductList class="list" @action="setProductToUpdate" />
+    <ProductList class="home-template__list" @action="setProductToUpdate" />
     <mp-button @event="showModal" title="Adicionar Produto" />
   </section>
 </template>
@@ -51,7 +51,7 @@ const updateProduct = (product) => {
   height: 100%;
   padding: $space-1 $space-1-5;
 
-  .list {
+  &__list {
     margin: 2rem 0;
   }
 }
