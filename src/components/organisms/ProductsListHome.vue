@@ -26,7 +26,7 @@ const action = (value) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .products-list {
   height: 65vh;

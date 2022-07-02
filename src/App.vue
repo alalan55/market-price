@@ -13,7 +13,7 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
 </template>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .wrapper {
   background: $bg;

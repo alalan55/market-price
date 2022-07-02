@@ -16,7 +16,7 @@ const goRoute = (path) => router.push({ name: path });
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .navBar {
   height: $navbarHeight;
