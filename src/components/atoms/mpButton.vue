@@ -13,7 +13,8 @@ const props = defineProps({
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
+
 .button-product {
   background: white;
   padding: $padding-1;

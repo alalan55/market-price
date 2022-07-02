@@ -44,7 +44,7 @@ const updateProduct = (product) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .home-template {
   width: 100%;

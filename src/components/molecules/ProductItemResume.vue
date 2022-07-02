@@ -57,7 +57,7 @@ const deleteProduct = (product) => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .item {
   padding: $padding-1 $padding-05;

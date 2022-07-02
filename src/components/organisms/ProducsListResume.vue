@@ -32,7 +32,7 @@ products.value = useStore.$cartProducts;
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .list-resume {
   height: 65vh;

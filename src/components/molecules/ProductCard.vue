@@ -59,7 +59,7 @@ const openAccordion = () => {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/scss/variables.scss";
+@import "@/assets/scss/utilities";
 
 .product-card {
   &__wrapper {
