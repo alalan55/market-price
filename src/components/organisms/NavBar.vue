@@ -1,7 +1,7 @@
 <template>
   <nav class="navBar">
     <div class="navBar__logo" @click="goRoute(`home`)">
-      <span>Market Price.</span>
+      <span>Market Price V2.</span>
     </div>
     <div class="navBar__cart" @click="goRoute(`resume`)">
       <img src="/imgs/cart.svg" alt="Carrinho de compras" />
