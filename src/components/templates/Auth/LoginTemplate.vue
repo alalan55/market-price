@@ -1,9 +1,20 @@
+<script setup>
+import MpButton from "../../atoms/mpButton2.vue";
+</script>
+
 <template>
-  <div>
-    <h1>Login template</h1>
+  <div class="login">
+    <h1>Login</h1>
+
+    <MpButton title="Entrar" />
   </div>
 </template>
 
-<script setup></script>
+<style lang="scss" scoped>
+@import "@/assets/scss/main";
 
-<style lang="scss" scoped></style>
+.login{}
+
+
+
+</style>

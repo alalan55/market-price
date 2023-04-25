@@ -17,9 +17,14 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
 .wrapper {
   background: $bg;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   padding: $space-1;
+  .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>
