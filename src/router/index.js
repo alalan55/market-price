@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import InternalLayout from "../components/layout/InternalLayout.vue";
+import ExternalLayout from "../components/layout/ExternalLayout.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,21 +27,40 @@ const router = createRouter({
     },
     {
       path: "/auth",
-      name: "authIndex",
-      component: () => import("../views/AuthView.vue"),
+      component: ExternalLayout,
       children: [
         {
           path: "",
-          name: "loginTemplate",
-          component: () =>
-            import("../components/templates/Auth/LoginTemplate.vue"),
+          component: () => import("../views/AuthView.vue"),
+          children: [
+            {
+              path: "",
+              name: "loginTemplate",
+              component: () =>
+                import("../components/templates/Auth/LoginTemplate.vue"),
+            },
+
+            {
+              path: "register",
+              name: "registerTemplate",
+              component: () =>
+                import("../components/templates/Auth/RegisterTemplate.vue"),
+            },
+          ],
         },
-        {
-          path: "register",
-          name: "registerTemplate",
-          component: () =>
-            import("../components/templates/Auth/RegisterTemplate.vue"),
-        },
+        // {
+        //   path: "",
+        //   name: "loginTemplate",
+        //   component: () =>
+        //     import("../components/templates/Auth/LoginTemplate.vue"),
+        // },
+
+        // {
+        //   path: "register",
+        //   name: "registerTemplate",
+        //   component: () =>
+        //     import("../components/templates/Auth/RegisterTemplate.vue"),
+        // },
       ],
     },
     {
