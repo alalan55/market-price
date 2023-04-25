@@ -14,7 +14,7 @@ import MpInput from "../../atoms/mpInput.vue";
           <MpInput placeholder="📧 E-mail" />
         </div>
         <div>
-          <MpInput placeholder="🔒 Senha" type="password" />
+          <MpInput placeholder="🔒 Senha" type="password" :show-eyes="true" />
         </div>
       </form>
     </div>
