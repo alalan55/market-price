@@ -2,7 +2,7 @@
 import { RouterView } from "vue-router";
 import NavBarVue from "@/components/organisms/NavBar.vue";
 
-alert('verificar utilização do componente view (AuthView.vue)')
+// alert('verificar utilização do componente view (AuthView.vue)')
 </script>
 
 
