@@ -4,6 +4,7 @@ const props = defineProps({
   placeholder: { type: String, default: "" },
   type: { type: String, default: "text" },
   showEyes: { type: Boolean, default: false },
+  size: { type: String, default: "normal" },
 });
 
 const eyePath = ref("/imgs/eye-off-icon.svg");
@@ -19,10 +20,25 @@ const toggleInputType = () => {
     typeIntp.value = "text";
   }
 };
+
+const getSize = (s) => {
+  let size = "";
+
+  switch (s) {
+    case "normal":
+      size = "45px";
+      break;
+    case "small":
+      size = "35px";
+      break;
+  }
+
+  return size
+};
 </script>
 
 <template>
-  <div class="inpt">
+  <div class="inpt" :style="{ height: getSize(props.size) }">
     <input :type="typeIntp" :placeholder="props.placeholder" />
 
     <!-- PASSWORD-EYE -->
@@ -39,7 +55,7 @@ const toggleInputType = () => {
 
 .inpt {
   width: 100%;
-  height: 45px;
+  // height: 45px;
   position: relative;
   input {
     width: 100%;
@@ -63,8 +79,8 @@ const toggleInputType = () => {
     justify-content: center;
 
     figure {
-      width: 30px;
-      height: 30px;
+      width: 25px;
+      height: 25px;
       cursor: pointer;
       img {
         width: 100%;
