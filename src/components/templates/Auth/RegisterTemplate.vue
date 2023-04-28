@@ -1,6 +1,15 @@
 <script setup>
+import { ref } from "vue";
+// import {Field, Form } from 'vee-validate'
 import MpButton from "../../atoms/mpButton2.vue";
 import MpInput from "../../atoms/mpInput.vue";
+
+const user = ref({
+  name: "",
+  email: "",
+  passoword: "",
+  profile_pic: "",
+});
 </script>
 
 <template>
@@ -10,7 +19,7 @@ import MpInput from "../../atoms/mpInput.vue";
     </div>
     <div class="register__form">
       <form>
-        <MpInput placeholder="🙋 Nome" class="inpt" />
+        <MpInput v-model="user.name" placeholder="🙋 Nome" class="inpt" />
 
         <MpInput placeholder="📧 E-mail" class="inpt" />
 

@@ -1,10 +1,14 @@
 <script setup>
 import { ref } from "vue";
+
+const emit = defineEmits(["update:modelValue"]);
+
 const props = defineProps({
   placeholder: { type: String, default: "" },
   type: { type: String, default: "text" },
   showEyes: { type: Boolean, default: false },
   size: { type: String, default: "normal" },
+  modelValue: { type: String },
 });
 
 const eyePath = ref("/imgs/eye-off-icon.svg");
@@ -33,13 +37,18 @@ const getSize = (s) => {
       break;
   }
 
-  return size
+  return size;
 };
 </script>
 
 <template>
   <div class="inpt" :style="{ height: getSize(props.size) }">
-    <input :type="typeIntp" :placeholder="props.placeholder" />
+    <input
+      :type="typeIntp"
+      :placeholder="props.placeholder"
+      :value="props.modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
 
     <!-- PASSWORD-EYE -->
     <div v-if="props.showEyes" class="inpt__eyes">
@@ -55,7 +64,6 @@ const getSize = (s) => {
 
 .inpt {
   width: 100%;
-  // height: 45px;
   position: relative;
   input {
     width: 100%;
