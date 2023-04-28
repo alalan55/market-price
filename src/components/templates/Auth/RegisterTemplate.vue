@@ -7,9 +7,10 @@ import MpInput from "../../atoms/mpInput.vue";
 const user = ref({
   name: "",
   email: "",
-  passoword: "",
+  password: "",
   profile_pic: "",
 });
+const confirmationPassword = ref("");
 </script>
 
 <template>
@@ -21,11 +22,15 @@ const user = ref({
       <form>
         <MpInput v-model="user.name" placeholder="🙋 Nome" class="inpt" />
 
-        <MpInput placeholder="📧 E-mail" class="inpt" />
+        <MpInput v-model="user.email" placeholder="📧 E-mail" class="inpt" />
 
-        <MpInput placeholder="🔒 Senha" class="inpt" />
+        <MpInput v-model="user.password" placeholder="🔒 Senha" class="inpt" />
 
-        <MpInput placeholder="🔒 Confirmação de senha" class="inpt" />
+        <MpInput
+          v-model="confirmationPassword"
+          placeholder="🔒 Confirmação de senha"
+          class="inpt"
+        />
       </form>
     </div>
     <div class="register--actions">

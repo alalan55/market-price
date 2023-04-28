@@ -1,16 +1,20 @@
+<script setup>
+import MpDotsLoading from "./mpDotsLoading.vue";
+
+const props = defineProps({
+  title: { type: String, default: "Título do botão" },
+  loading: { type: Boolean, default: true },
+});
+</script>
+
 <template>
   <div class="button-product" @click="$emit('event')">
     <div class="button-product__title">
-      <span> {{ props.title }} </span>
+      <span v-if="!props.loading"> {{ props.title }} </span>
+      <MpDotsLoading v-else />
     </div>
   </div>
 </template>
-
-<script setup>
-const props = defineProps({
-  title: { type: String, required: true, default: "Título do botão" },
-});
-</script>
 
 <style lang="scss" scoped>
 @import "@/assets/scss/main";
@@ -37,7 +41,7 @@ const props = defineProps({
   &__title {
     span {
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: white;
     }
   }
