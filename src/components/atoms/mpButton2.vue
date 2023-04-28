@@ -3,7 +3,7 @@ import MpDotsLoading from "./mpDotsLoading.vue";
 
 const props = defineProps({
   title: { type: String, default: "Título do botão" },
-  loading: { type: Boolean, default: true },
+  loading: { type: Boolean, default: false },
 });
 </script>
 
@@ -39,6 +39,10 @@ const props = defineProps({
   }
 
   &__title {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     span {
       font-weight: 700;
       font-size: 1rem;

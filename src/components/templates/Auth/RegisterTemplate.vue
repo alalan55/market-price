@@ -11,6 +11,13 @@ const user = ref({
   profile_pic: "",
 });
 const confirmationPassword = ref("");
+const loadTest = ref(false);
+const toggleLoading = () =>{
+  loadTest.value = true
+  setTimeout(() => {
+    loadTest.value = false
+  }, 5000)
+}
 </script>
 
 <template>
@@ -34,7 +41,7 @@ const confirmationPassword = ref("");
       </form>
     </div>
     <div class="register--actions">
-      <MpButton title="Cadastrar" />
+      <MpButton title="Cadastrar" :loading="loadTest" @click="toggleLoading"/>
     </div>
   </div>
 </template>
