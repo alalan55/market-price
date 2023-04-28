@@ -10,12 +10,9 @@ import MpInput from "../../atoms/mpInput.vue";
     </div>
     <div class="login__form">
       <form>
-        <div>
-          <MpInput placeholder="📧 E-mail" />
-        </div>
-        <div>
-          <MpInput placeholder="🔒 Senha" type="password" :show-eyes="true" />
-        </div>
+        <MpInput placeholder="📧 E-mail" class="inpt" />
+
+        <MpInput placeholder="🔒 Senha" type="password" :show-eyes="true" class="inpt" />
       </form>
     </div>
     <div class="login--actions">
@@ -46,11 +43,8 @@ import MpInput from "../../atoms/mpInput.vue";
 
   &__form {
     form {
-      div {
+      .inpt {
         margin-bottom: $space-1-5;
-        // &:not(:last-child) {
-        //   margin-bottom: $space-1-5;
-        // }
       }
     }
   }

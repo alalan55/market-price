@@ -4,27 +4,22 @@ import MpInput from "../../atoms/mpInput.vue";
 </script>
 
 <template>
-  <div class="login">
-    <div class="login__header">
+  <div class="register">
+    <div class="register__header">
       <span>Insira as informações abaixo para criar seu cadastro 😀</span>
     </div>
-    <div class="login__form">
+    <div class="register__form">
       <form>
-        <div>
-          <MpInput placeholder="🙋 Nome" />
-        </div>
-        <div>
-          <MpInput placeholder="📧 E-mail" />
-        </div>
-        <div>
-          <MpInput placeholder="🔒 Senha" />
-        </div>
-        <div>
-          <MpInput placeholder="🔒 Confirmação de senha" />
-        </div>
+        <MpInput placeholder="🙋 Nome" class="inpt" />
+
+        <MpInput placeholder="📧 E-mail" class="inpt" />
+
+        <MpInput placeholder="🔒 Senha" class="inpt" />
+
+        <MpInput placeholder="🔒 Confirmação de senha" class="inpt" />
       </form>
     </div>
-    <div class="login--actions">
+    <div class="register--actions">
       <MpButton title="Cadastrar" />
     </div>
   </div>
@@ -33,7 +28,7 @@ import MpInput from "../../atoms/mpInput.vue";
 <style lang="scss" scoped>
 @import "@/assets/scss/main";
 
-.login {
+.register {
   display: flex;
   flex-direction: column;
   gap: $space-1;
@@ -47,11 +42,8 @@ import MpInput from "../../atoms/mpInput.vue";
 
   &__form {
     form {
-      div {
+      .inpt {
         margin-bottom: $space-1-5;
-        // &:not(:last-child) {
-        //   margin-bottom: $space-1-5;
-        // }
       }
     }
   }
