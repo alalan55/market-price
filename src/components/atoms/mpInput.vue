@@ -9,6 +9,7 @@ const props = defineProps({
   showEyes: { type: Boolean, default: false },
   size: { type: String, default: "normal" },
   modelValue: { type: String },
+  validator: { type: Object },
 });
 
 const eyePath = ref("/imgs/eye-off-icon.svg");
@@ -49,6 +50,9 @@ const getSize = (s) => {
       :value="props.modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
     />
+    <!-- <div class="inpt__error-msg">
+      <span> Algum erro aqui </span>
+    </div> -->
 
     <!-- PASSWORD-EYE -->
     <div v-if="props.showEyes" class="inpt__eyes">
@@ -63,8 +67,10 @@ const getSize = (s) => {
 @import "@/assets/scss/main";
 
 .inpt {
+  // border: 10px solid;
   width: 100%;
   position: relative;
+  // padding-bottom: 0.5rem;
   input {
     width: 100%;
     height: 100%;
@@ -95,6 +101,15 @@ const getSize = (s) => {
         height: 100%;
         object-fit: contain;
       }
+    }
+  }
+
+  &__error-msg {
+    margin: 0.2rem 0;
+    span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: red;
     }
   }
 }

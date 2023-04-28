@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
 // import {Field, Form } from 'vee-validate'
+import { useVuelidate } from "@vuelidate/core";
+import { required, email } from "@vuelidate/validators";
+// import {} from '@vuelida'
 import MpButton from "../../atoms/mpButton2.vue";
 import MpInput from "../../atoms/mpInput.vue";
 
@@ -10,14 +13,24 @@ const user = ref({
   password: "",
   profile_pic: "",
 });
+
 const confirmationPassword = ref("");
 const loadTest = ref(false);
-const toggleLoading = () =>{
-  loadTest.value = true
+
+const rules = {
+  name: { required },
+  email: { required, email },
+  password: { required },
+};
+
+const v$ = useVuelidate(rules, user.value);
+
+const toggleLoading = () => {
+  loadTest.value = true;
   setTimeout(() => {
-    loadTest.value = false
-  }, 5000)
-}
+    loadTest.value = false;
+  }, 5000);
+};
 </script>
 
 <template>
@@ -27,7 +40,7 @@ const toggleLoading = () =>{
     </div>
     <div class="register__form">
       <form>
-        <MpInput v-model="user.name" placeholder="🙋 Nome" class="inpt" />
+        <MpInput v-model="user.name" placeholder="🙋 Nome" class="inpt" :validator="v$" />
 
         <MpInput v-model="user.email" placeholder="📧 E-mail" class="inpt" />
 
@@ -41,7 +54,7 @@ const toggleLoading = () =>{
       </form>
     </div>
     <div class="register--actions">
-      <MpButton title="Cadastrar" :loading="loadTest" @click="toggleLoading"/>
+      <MpButton title="Cadastrar" :loading="loadTest" @click="toggleLoading" />
     </div>
   </div>
 </template>
@@ -64,7 +77,7 @@ const toggleLoading = () =>{
   &__form {
     form {
       .inpt {
-        margin-bottom: $space-1-5;
+        margin-bottom: 2rem;
       }
     }
   }
