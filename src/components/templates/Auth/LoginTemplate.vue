@@ -11,15 +11,20 @@ import MpInput from "../../atoms/mpInput.vue";
     <div class="login__form">
       <form>
         <div>
-          <MpInput placeholder="📧 E-mail"  />
+          <MpInput placeholder="📧 E-mail" />
         </div>
         <div>
-          <MpInput placeholder="🔒 Senha" type="password" :show-eyes="true"  />
+          <MpInput placeholder="🔒 Senha" type="password" :show-eyes="true" />
         </div>
       </form>
     </div>
-    <div class="login__actions">
+    <div class="login--actions">
       <MpButton title="Entrar" />
+
+      <span>
+        Não tem uma conta? <router-link to="/auth/register">clique aqui</router-link> e
+        registre-se!
+      </span>
     </div>
   </div>
 </template>
@@ -46,6 +51,19 @@ import MpInput from "../../atoms/mpInput.vue";
         // &:not(:last-child) {
         //   margin-bottom: $space-1-5;
         // }
+      }
+    }
+  }
+
+  &--actions {
+    span {
+      margin-top: $space-1;
+      display: block;
+      text-align: center;
+      a {
+        font-weight: 600;
+        text-decoration: none;
+        color: $pink-4;
       }
     }
   }
