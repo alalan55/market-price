@@ -1,9 +1,7 @@
 <script setup>
 import { ref, reactive, computed } from "vue";
-// import {Field, Form } from 'vee-validate'
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
-// import {} from '@vuelida'
 import MpButton from "../../atoms/mpButton2.vue";
 import MpInput from "../../atoms/mpInput.vue";
 
@@ -27,12 +25,6 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, user);
 
-// const toggleLoading = () => {
-//   loadTest.value = true;
-//   setTimeout(() => {
-//     loadTest.value = false;
-//   }, 5000);
-// };
 
 const submitForm = () => {
   v$.value.$validate();

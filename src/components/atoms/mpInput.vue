@@ -12,7 +12,7 @@ const props = defineProps({
   size: { type: String, default: "normal" },
   modelValue: { type: String },
   validator: { type: Object },
-  minLengthCamp:{type: Number, default: 0},
+  minLengthCamp: { type: Number, default: 0 },
   rules: { type: Array, default: null }, // PRIMEIRA POSIÇÃO DO ARRAY, SEMPRE VAI SER O NOME DO CAMPO PARA A VALIDAÇÃO
 });
 
@@ -68,7 +68,9 @@ const getSize = (s) => {
       <!-- {{  props.validator?.[props.rules[0]]}} -->
       <span v-if="props.validator?.[props.rules[0]].required">*Campo necessário</span>
       <span v-if="props.validator?.[props.rules[0]].email">*Insira um e-mail válido</span>
-      <span v-if="props.validator?.[props.rules[0]].minLength">*O campo precisa ter ao menos {{ props.minLengthCamp }} caracteres</span>
+      <span v-if="props.validator?.[props.rules[0]].minLength"
+        >*O campo precisa ter ao menos {{ props.minLengthCamp }} caracteres</span
+      >
     </div>
   </div>
 </template>
