@@ -1,5 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref, useAttrs, computed } from "vue";
+
+const attrs = useAttrs();
 
 const emit = defineEmits(["update:modelValue"]);
 
@@ -10,6 +12,8 @@ const props = defineProps({
   size: { type: String, default: "normal" },
   modelValue: { type: String },
   validator: { type: Object },
+  minLengthCamp:{type: Number, default: 0},
+  rules: { type: Array, default: null }, // PRIMEIRA POSIÇÃO DO ARRAY, SEMPRE VAI SER O NOME DO CAMPO PARA A VALIDAÇÃO
 });
 
 const eyePath = ref("/imgs/eye-off-icon.svg");
@@ -43,22 +47,28 @@ const getSize = (s) => {
 </script>
 
 <template>
-  <div class="inpt" :style="{ height: getSize(props.size) }">
-    <input
-      :type="typeIntp"
-      :placeholder="props.placeholder"
-      :value="props.modelValue"
-      @input="$emit('update:modelValue', $event.target.value)"
-    />
-    <!-- <div class="inpt__error-msg">
-      <span> Algum erro aqui </span>
-    </div> -->
+  <div class="inpt">
+    <div class="inpt__content" :style="{ height: getSize(props.size) }">
+      <input
+        :type="typeIntp"
+        :placeholder="props.placeholder"
+        :value="props.modelValue"
+        @input="$emit('update:modelValue', $event.target.value)"
+      />
 
-    <!-- PASSWORD-EYE -->
-    <div v-if="props.showEyes" class="inpt__eyes">
-      <figure @click="toggleInputType">
-        <img :src="eyePath" />
-      </figure>
+      <!-- PASSWORD-EYE -->
+      <div v-if="props.showEyes" class="inpt__content__eyes">
+        <figure @click="toggleInputType">
+          <img :src="eyePath" />
+        </figure>
+      </div>
+    </div>
+
+    <div v-if="props.validator?.[props.rules[0]].$error" class="inpt__msg">
+      <!-- {{  props.validator?.[props.rules[0]]}} -->
+      <span v-if="props.validator?.[props.rules[0]].required">*Campo necessário</span>
+      <span v-if="props.validator?.[props.rules[0]].email">*Insira um e-mail válido</span>
+      <span v-if="props.validator?.[props.rules[0]].minLength">*O campo precisa ter ao menos {{ props.minLengthCamp }} caracteres</span>
     </div>
   </div>
 </template>
@@ -67,49 +77,54 @@ const getSize = (s) => {
 @import "@/assets/scss/main";
 
 .inpt {
-  // border: 10px solid;
   width: 100%;
-  position: relative;
-  // padding-bottom: 0.5rem;
-  input {
-    width: 100%;
-    height: 100%;
-    padding: $space-0-5;
-    border-radius: 10px;
-    border: 1px solid $pink-4;
+  &__content {
+    position: relative;
+    input {
+      width: 100%;
+      height: 100%;
+      padding: $space-0-5;
+      border-radius: 10px;
+      border: 1px solid $pink-4;
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
     }
-  }
 
-  &__eyes {
-    position: absolute;
-    right: 10px;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &__eyes {
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    figure {
-      width: 25px;
-      height: 25px;
-      cursor: pointer;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+      figure {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
     }
   }
 
-  &__error-msg {
+  &__msg {
     margin: 0.2rem 0;
     span {
-      font-size: 0.8rem;
+      font-size: 0.73rem;
       font-weight: 500;
       color: red;
+      display: block;
+
+      &:not(:last-child) {
+        margin-bottom: 0.2rem;
+      }
     }
   }
 }
