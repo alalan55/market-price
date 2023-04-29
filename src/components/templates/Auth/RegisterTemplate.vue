@@ -1,5 +1,8 @@
 <script setup>
 import { ref, reactive, computed } from "vue";
+import { useRouter } from "vue-router";
+import http from "../../../services/axios";
+import { useToast } from "vue-toastification";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email, minLength } from "@vuelidate/validators";
 import MpButton from "../../atoms/mpButton2.vue";
@@ -13,7 +16,9 @@ const user = reactive({
 });
 
 const confirmationPassword = ref("");
-const loadTest = ref(false);
+const loading = ref(false);
+const toast = useToast();
+const router = useRouter();
 
 const rules = computed(() => {
   return {
@@ -25,11 +30,30 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, user);
 
-const submitForm = () => {
+const submitForm = async () => {
   v$.value.$validate();
 
-  if (v$.value.$error) console.log("tem erros", v$.value.$errors);
-  else console.log("não tem erross");
+  if (!v$.value.$error) {
+    if (user.password == confirmationPassword.value) {
+      try {
+        loading.value = true;
+        const { data } = await http.post("user/create", user);
+
+        if (data.status == 201) {
+          toast.success(data.message);
+
+          router.push({ name: "loginTemplate" });
+        }
+
+        loading.value = false;
+      } catch (error) {
+        toast.error("Erro ao cadastrar usuário");
+        loading.value = false;
+      }
+    } else {
+      toast.warning("A senha precisa estar igual a confirmação");
+    }
+  }
 };
 </script>
 
@@ -39,7 +63,7 @@ const submitForm = () => {
       <span>Insira as informações abaixo para criar seu cadastro 😀</span>
     </div>
     <div class="register__form">
-      <form>
+      <form @submit.prevent>
         <MpInput
           v-model="user.name"
           placeholder="🙋 Nome"
@@ -73,7 +97,7 @@ const submitForm = () => {
       </form>
     </div>
     <div class="register--actions">
-      <MpButton title="Cadastrar" :loading="loadTest" @click="submitForm" />
+      <MpButton title="Cadastrar" :loading="loading" @click="submitForm" />
     </div>
   </div>
 </template>

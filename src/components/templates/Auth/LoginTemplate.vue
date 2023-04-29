@@ -28,8 +28,7 @@ const submitForm = async () => {
   if (!v$.value.$error) {
     try {
       loading.value = true;
-      const req = await http.post("auth/login", user);
-      console.log(req.data);
+      const { data } = await http.post("auth/login", user);
       loading.value = false;
     } catch (error) {
       loading.value = false;
