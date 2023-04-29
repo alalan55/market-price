@@ -1,5 +1,5 @@
 <script setup>
-import { ref, useAttrs, computed } from "vue";
+import { ref, useAttrs } from "vue";
 
 const attrs = useAttrs();
 

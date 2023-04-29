@@ -1,10 +1,14 @@
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive, computed, ref } from "vue";
+import http from "../../../services/axios";
+import { useToast } from "vue-toastification";
 import { useVuelidate } from "@vuelidate/core";
 import { required, email } from "@vuelidate/validators";
 import MpButton from "../../atoms/mpButton2.vue";
 import MpInput from "../../atoms/mpInput.vue";
 
+const toast = useToast();
+const loading = ref(false);
 const user = reactive({
   email: "",
   password: "",
@@ -19,13 +23,22 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, user);
 
-const submitForm = () => {
+const submitForm = async () => {
   v$.value.$validate();
-
-  if (v$.value.$error) {
-    console.log("Tem Erros no forumlário", v$.value.$errors);
-  } else {
-    console.log("Formulário OK");
+  if (!v$.value.$error) {
+    try {
+      loading.value = true;
+      const req = await http.post("auth/login", user);
+      console.log(req.data);
+      loading.value = false;
+    } catch (error) {
+      loading.value = false;
+      toast.error(
+        error?.response?.data?.detail
+          ? error.response.data.detail
+          : "Error ao realizar login"
+      );
+    }
   }
 };
 </script>
@@ -57,7 +70,7 @@ const submitForm = () => {
       </form>
     </div>
     <div class="login--actions">
-      <MpButton title="Entrar" @click="submitForm" />
+      <MpButton title="Entrar" @click="submitForm" :loading="loading" />
 
       <span>
         Não tem uma conta? <router-link to="/auth/register">clique aqui</router-link> e

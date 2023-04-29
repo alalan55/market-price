@@ -25,16 +25,11 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, user);
 
-
 const submitForm = () => {
   v$.value.$validate();
 
-  if (v$.value.$error) {
-    console.log("tem erros");
-    console.log(v$.value.$errors);
-  } else {
-    console.log("não tem erross");
-  }
+  if (v$.value.$error) console.log("tem erros", v$.value.$errors);
+  else console.log("não tem erross");
 };
 </script>
 
