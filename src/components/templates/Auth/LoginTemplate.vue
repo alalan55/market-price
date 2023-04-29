@@ -1,5 +1,7 @@
 <script setup>
 import { reactive, computed, ref } from "vue";
+import { useRouter } from "vue-router";
+import { useUserStore } from "@/stores/user";
 import http from "../../../services/axios";
 import { useToast } from "vue-toastification";
 import { useVuelidate } from "@vuelidate/core";
@@ -8,6 +10,8 @@ import MpButton from "../../atoms/mpButton2.vue";
 import MpInput from "../../atoms/mpInput.vue";
 
 const toast = useToast();
+const userStore = useUserStore();
+const router = useRouter();
 const loading = ref(false);
 const user = reactive({
   email: "",
@@ -26,18 +30,11 @@ const v$ = useVuelidate(rules, user);
 const submitForm = async () => {
   v$.value.$validate();
   if (!v$.value.$error) {
-    try {
-      loading.value = true;
-      const { data } = await http.post("auth/login", user);
-      loading.value = false;
-    } catch (error) {
-      loading.value = false;
-      toast.error(
-        error?.response?.data?.detail
-          ? error.response.data.detail
-          : "Error ao realizar login"
-      );
-    }
+    loading.value = true;
+    const isSuccessfulyLogin = await userStore.LOGIN(user);
+    if (!isSuccessfulyLogin.isOk) toast.error(isSuccessfulyLogin.message);
+    else router.push("/");
+    loading.value = false;
   }
 };
 </script>
