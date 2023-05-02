@@ -1,9 +1,16 @@
-<script setup></script>
+<script setup>
+import { useBuyStore } from "@/stores/buy";
+const store = useBuyStore();
+</script>
 
 <template>
   <figure>
     <img src="/imgs/cart.svg" alt="Carrinho de compras" />
-    <div class="number"><span>12</span></div>
+    <div v-if="store.$cartProducts.length" class="number">
+      <span>{{
+        store.$cartProducts.length > 10 ? `10+` : store.$cartProducts.length
+      }}</span>
+    </div>
   </figure>
 </template>
 
@@ -17,7 +24,6 @@ figure {
   align-items: center;
   border-radius: 50%;
   position: relative;
-  //   background: red;
 
   img {
     width: 90%;
