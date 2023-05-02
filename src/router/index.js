@@ -48,19 +48,6 @@ const router = createRouter({
             },
           ],
         },
-        // {
-        //   path: "",
-        //   name: "loginTemplate",
-        //   component: () =>
-        //     import("../components/templates/Auth/LoginTemplate.vue"),
-        // },
-
-        // {
-        //   path: "register",
-        //   name: "registerTemplate",
-        //   component: () =>
-        //     import("../components/templates/Auth/RegisterTemplate.vue"),
-        // },
       ],
     },
     {

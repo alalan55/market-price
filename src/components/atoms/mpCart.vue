@@ -1,0 +1,47 @@
+<script setup></script>
+
+<template>
+  <figure>
+    <img src="/imgs/cart.svg" alt="Carrinho de compras" />
+    <div class="number"><span>12</span></div>
+  </figure>
+</template>
+
+<style lang="scss" scoped>
+@import "@/assets/scss/utilities";
+figure {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  position: relative;
+  //   background: red;
+
+  img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+  }
+
+  .number {
+    bottom: -11px;
+    right: -10px;
+    background: $pink-4;
+    position: absolute;
+    color: white;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    span {
+      font-size: 0.65rem;
+      font-weight: 700;
+    }
+  }
+}
+</style>
