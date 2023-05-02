@@ -31,8 +31,8 @@ const submitForm = async () => {
   v$.value.$validate();
   if (!v$.value.$error) {
     loading.value = true;
-    const isSuccessfulyLogin = await userStore.LOGIN(user);
-    if (!isSuccessfulyLogin.isOk) toast.error(isSuccessfulyLogin.message);
+    const isSuccessfullyLogin = await userStore.LOGIN(user);
+    if (!isSuccessfullyLogin.isOk) toast.error(isSuccessfullyLogin.message);
     else router.push("/");
     loading.value = false;
   }
