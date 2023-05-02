@@ -7,9 +7,9 @@ const store = useBuyStore();
   <figure>
     <img src="/imgs/cart.svg" alt="Carrinho de compras" />
     <div v-if="store.$cartProducts.length" class="number">
-      <span>{{
-        store.$cartProducts.length > 10 ? `10+` : store.$cartProducts.length
-      }}</span>
+      <span>
+        {{ store.$cartProducts.length > 10 ? `10+` : store.$cartProducts.length }}
+      </span>
     </div>
   </figure>
 </template>

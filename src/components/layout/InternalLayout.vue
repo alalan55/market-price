@@ -7,7 +7,13 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
   <div class="wrapper">
     <NavBarVue />
     <div class="content">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
+
+      <!-- <RouterView /> -->
     </div>
   </div>
 </template>
@@ -21,5 +27,14 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
   .content {
     height: calc(100vh - $navbarHeight);
   }
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
 }
 </style>

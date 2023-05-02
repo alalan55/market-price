@@ -42,11 +42,8 @@ const links = [
       </ul>
     </div>
 
-    <div class="navBar__cart" @click="goRoute(`resume`)">
-      <Cart/>
-      <!-- <figure>
-        <img src="/imgs/cart.svg" alt="Carrinho de compras" />
-      </figure> -->
+    <div class="navBar__cart">
+      <Cart @click="goRoute(`resume`)" />
     </div>
   </nav>
 </template>
@@ -100,7 +97,6 @@ const links = [
     display: flex;
     align-items: center;
     justify-content: flex-end;
-  
   }
   & > div {
     flex: 1 1 500px;

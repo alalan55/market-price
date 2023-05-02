@@ -10,6 +10,11 @@ import Logo from "../components/atoms/logo.vue";
     </div>
     <div class="auth__body">
       <RouterView />
+      <!-- <RouterView v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </RouterView> -->
     </div>
   </main>
 </template>
@@ -45,5 +50,14 @@ import Logo from "../components/atoms/logo.vue";
     width: 100%;
     min-width: 100%;
   }
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
 }
 </style>
