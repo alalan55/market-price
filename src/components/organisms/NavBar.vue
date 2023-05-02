@@ -1,6 +1,5 @@
 <script setup>
 import { useRouter } from "vue-router";
-import Logo from "../atoms/logo.vue";
 import Cart from "../atoms/mpCart.vue";
 
 const router = useRouter();
@@ -29,7 +28,6 @@ const links = [
   <nav class="navBar">
     <div class="navBar__logo">
       <span @click="goRoute(`home`)">Market Price V2.</span>
-      <!-- <Logo @click="goRoute(`home`)" /> -->
     </div>
 
     <div class="navBar__links">
@@ -100,7 +98,6 @@ const links = [
   }
   & > div {
     flex: 1 1 500px;
-    // border: 1px solid;
   }
 }
 </style>

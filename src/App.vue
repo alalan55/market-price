@@ -1,6 +1,5 @@
 <script setup>
 import { RouterView } from "vue-router";
-import NavBarVue from "@/components/organisms/NavBar.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -24,14 +23,9 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
 </style>
 
 <template>
-  <!-- <RouterView v-slot="{ Component }">
+  <RouterView v-slot="{ Component }">
     <transition name="fade" mode="out-in">
       <component :is="Component" />
     </transition>
-  </RouterView> -->
-  <router-view v-slot="{ Component }">
-    <transition name="fade" mode="out-in">
-      <component :is="Component" />
-    </transition>
-  </router-view>
+  </RouterView>
 </template>
