@@ -1,17 +1,21 @@
 <script setup>
-
+const props = defineProps({
+  imgPath: { type: String, default: "" },
+  price: { type: [String, Number], default: null },
+  title: { type: String, default: "" },
+});
 </script>
 
 <template>
   <div class="accountant">
     <div class="head">
-      <span>Total Geral</span>
+      <span>{{ props.title }}</span>
     </div>
     <div class="body">
       <figure>
-        <img src="/imgs/dollar-icon.svg" alt="ìcone" />
+        <img :src="props.imgPath" alt="ìcone" />
       </figure>
-      <h2>4.000,00</h2>
+      <h2>{{ props.price }}</h2>
     </div>
   </div>
 </template>

@@ -41,9 +41,24 @@ const updateProduct = (product) => {
     />
 
     <div class="home-template__accountants">
-      <CardAccountant class="item" />
-      <CardAccountant class="item" />
-      <CardAccountant class="item" />
+      <CardAccountant
+        class="item"
+        title="Total geral"
+        imgPath="/imgs/dollar-icon.svg"
+        price="4.000,00"
+      />
+      <CardAccountant
+        class="item"
+        title="Total mensal"
+        imgPath="/imgs/dollar-icon.svg"
+        price="4.000,00"
+      />
+      <CardAccountant
+        class="item"
+        title="total anual"
+        imgPath="/imgs/dollar-icon.svg"
+        price="4.000,00"
+      />
     </div>
     <!-- <ProductList class="home-template__list" @action="setProductToUpdate" />
     <mp-button @event="showModal" title="Adicionar Produto" /> -->
@@ -64,7 +79,7 @@ const updateProduct = (product) => {
     align-items: center;
     gap: $space-1;
     flex-wrap: wrap;
-    .item{
+    .item {
       flex: 1 1 400px;
     }
   }
