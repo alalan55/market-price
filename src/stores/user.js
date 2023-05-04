@@ -29,7 +29,9 @@ export const useUserStore = defineStore({
       }
     },
   },
-  getters: {},
+  getters: {
+    $user: (state) => state.user || JSON.parse(localStorage.getItem("user")),
+  },
 });
 
 if (import.meta.hot) {

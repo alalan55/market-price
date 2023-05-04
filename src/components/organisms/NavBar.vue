@@ -1,8 +1,10 @@
 <script setup>
 import { useRouter } from "vue-router";
+import { useUserStore } from "@/stores/user";
 import Cart from "../atoms/mpCart.vue";
 
 const router = useRouter();
+const store = useUserStore();
 const goRoute = (path) => router.push({ name: path });
 
 const links = [
@@ -26,8 +28,17 @@ const links = [
 
 <template>
   <nav class="navBar">
-    <div class="navBar__logo">
-      <span @click="goRoute(`home`)">Market Price V2.</span>
+    <div class="navBar__profile">
+      <router-link to="/profile">
+        <figure>
+          <img src="/imgs/static/user.png" />
+          <!-- <img src="/imgs/user-icon.svg" /> -->
+        </figure>
+      </router-link>
+      <span
+        >Olá <strong>{{ store.$user.name }}</strong
+        >!</span
+      >
     </div>
 
     <div class="navBar__links">
@@ -55,18 +66,42 @@ const links = [
   align-items: center;
   justify-content: space-between;
   padding: $space-1-5;
+  text-decoration: none;
+  color: $pink-4;
 
-  &__logo {
-    cursor: pointer;
-    span {
-      font-weight: 800;
-      font-size: 1.2em;
-      color: $pink-1;
-      text-transform: uppercase;
-    }
+  // &__logo {
+  //   cursor: pointer;
+  //   span {
+  //     font-weight: 800;
+  //     font-size: 1.2em;
+  //     color: $pink-1;
+  //     text-transform: uppercase;
+  //   }
+
+  //   figure {
+  //     border: 1px solid;
+  //   }
+  // }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
     figure {
-      border: 1px solid;
+      padding: 0 !important;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    span {
+      font-weight: 500;
     }
   }
   &__links {
