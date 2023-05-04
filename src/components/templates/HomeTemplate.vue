@@ -1,22 +1,10 @@
-<template>
-  <section class="home-template">
-    <Modal
-      v-if="isModalOpen"
-      @close="closeModal"
-      @action="saveProduct"
-      @update="updateProduct"
-    />
-    <ProductList class="home-template__list" @action="setProductToUpdate" />
-    <mp-button @event="showModal" title="Adicionar Produto" />
-  </section>
-</template>
-
 <script setup>
 import { ref } from "vue";
 import { useBuyStore } from "@/stores/buy";
 import mpButton from "@/components/atoms/mpButton.vue";
 import Modal from "@/components/molecules/ModalComponent.vue";
 import ProductList from "@/components/organisms/ProductsListHome.vue";
+import CardAccountant from "../atoms/mpCardAccountant.vue";
 
 const buyStore = useBuyStore();
 
@@ -43,13 +31,43 @@ const updateProduct = (product) => {
 };
 </script>
 
+<template>
+  <section class="home-template">
+    <Modal
+      v-if="isModalOpen"
+      @close="closeModal"
+      @action="saveProduct"
+      @update="updateProduct"
+    />
+
+    <div class="home-template__accountants">
+      <CardAccountant class="item" />
+      <CardAccountant class="item" />
+      <CardAccountant class="item" />
+    </div>
+    <!-- <ProductList class="home-template__list" @action="setProductToUpdate" />
+    <mp-button @event="showModal" title="Adicionar Produto" /> -->
+  </section>
+</template>
+
 <style lang="scss" scoped>
 @import "@/assets/scss/utilities";
 
 .home-template {
   width: 100%;
   height: 100%;
-  padding: $space-1 $space-1-5;
+  // padding: $space-1 $space-1-5;
+
+  &__accountants {
+    // border: 1px solid;
+    display: flex;
+    align-items: center;
+    gap: $space-1;
+    flex-wrap: wrap;
+    .item{
+      flex: 1 1 400px;
+    }
+  }
 
   &__list {
     margin: 2rem 0;
