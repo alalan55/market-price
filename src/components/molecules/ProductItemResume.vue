@@ -90,7 +90,7 @@ const deleteProduct = (product) => {
     align-items: center;
     justify-content: flex-end;
     cursor: pointer;
-    background: $pink-1;
+    background: $dark-aqua-1;
     justify-content: center;
     border-radius: 5px;
     padding: 0.3rem;

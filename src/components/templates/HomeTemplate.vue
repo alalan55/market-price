@@ -5,6 +5,7 @@ import mpButton from "@/components/atoms/mpButton.vue";
 import Modal from "@/components/molecules/ModalComponent.vue";
 import ProductList from "@/components/organisms/ProductsListHome.vue";
 import CardAccountant from "../atoms/mpCardAccountant.vue";
+import Accordion from "@/components/molecules/mpAccordion.vue";
 
 const buyStore = useBuyStore();
 
@@ -60,6 +61,18 @@ const updateProduct = (product) => {
         price="4.000,00"
       />
     </div>
+
+    <div class="home-template__resumes">
+      <div class="home-template__resumes__texts">
+        <h2>Resumo</h2>
+        <!-- <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nesciunt ut eaque
+          delectus accusantium voluptates. Saepe, eos. Quae, maxime dolore minus commodi
+          facere ipsam nisi, quas modi eum cumque sit.</span
+        > -->
+        <Accordion v-for="item in 5" :key="item"/>
+      </div>
+    </div>
     <!-- <ProductList class="home-template__list" @action="setProductToUpdate" />
     <mp-button @event="showModal" title="Adicionar Produto" /> -->
   </section>
@@ -84,8 +97,20 @@ const updateProduct = (product) => {
     }
   }
 
+  &__resumes {
+    color: $dark-aqua-1;
+    &__texts {
+    }
+  }
+
   &__list {
     margin: 2rem 0;
+  }
+
+  & > div {
+    &:not(:last-child) {
+      margin-bottom: $space-1;
+    }
   }
 }
 </style>

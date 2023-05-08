@@ -25,7 +25,7 @@ const props = defineProps({
 .accountant {
   padding: $space-1;
   border-radius: 10px;
-  background: $pink-4;
+  background: $dark-aqua-1;
   height: 150px;
   color: white;
   display: flex;

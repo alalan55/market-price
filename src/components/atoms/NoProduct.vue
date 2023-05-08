@@ -13,7 +13,7 @@
   span {
     font-size: 1.1em;
     font-weight: 700;
-    color: $pink-1;
+    color: $dark-aqua-1;
   }
 }
 </style>

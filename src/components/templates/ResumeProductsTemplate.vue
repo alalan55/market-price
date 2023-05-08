@@ -33,7 +33,7 @@ const cleanCart = useStore.CLEAN_CART;
     span {
       font-weight: 800;
       font-size: 1.3em;
-      color: $pink-1;
+      color: $dark-aqua-1;
     }
   }
 

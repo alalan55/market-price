@@ -67,14 +67,14 @@ const links = [
   justify-content: space-between;
   padding: $space-1-5;
   text-decoration: none;
-  color: $pink-4;
+  color: $light-aqua-2;
 
   // &__logo {
   //   cursor: pointer;
   //   span {
   //     font-weight: 800;
   //     font-size: 1.2em;
-  //     color: $pink-1;
+  //     color: $dark-aqua-1;
   //     text-transform: uppercase;
   //   }
 
@@ -116,7 +116,7 @@ const links = [
 
         a {
           text-decoration: none;
-          color: $pink-4;
+          color: $light-aqua-2;
           font-weight: 700;
         }
         .router-link-exact-active {

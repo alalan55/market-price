@@ -20,7 +20,7 @@ const props = defineProps({
 @import "@/assets/scss/main";
 
 .button-product {
-  background: $pink-1;
+  background: $dark-aqua-1;
   padding: $space-1;
   border-radius: 15px;
   display: flex;

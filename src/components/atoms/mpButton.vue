@@ -37,7 +37,7 @@ const props = defineProps({
   &__title {
     span {
       font-weight: 600;
-      color: $pink-1;
+      color: $dark-aqua-1;
     }
   }
 }

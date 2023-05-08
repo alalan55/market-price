@@ -105,15 +105,15 @@ const close = () => {
           display: flex;
           flex-direction: column;
           padding-bottom: $space-0-5;
-          color: $pink-2;
+          color: $dark-aqua-1;
 
           input {
             margin-top: $space-0-5;
             width: 100%;
             padding: $space-0-5;
             border-radius: 5px;
-            border: 1px solid $pink-2;
-            color: $pink-2;
+            border: 1px solid $dark-aqua-1;
+            color: $dark-aqua-1;
             font-weight: 700;
 
             &:focus {
@@ -131,7 +131,7 @@ const close = () => {
           border-radius: 5px;
           font-weight: 600;
           color: white;
-          background: $pink-1;
+          background: $dark-aqua-1;
           border: none;
         }
       }

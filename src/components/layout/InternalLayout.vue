@@ -25,7 +25,7 @@ import NavBarVue from "@/components/organisms/NavBar.vue";
   background: $bg;
 
   .content {
-    height: calc(100vh - $navbarHeight);
+    min-height: calc(100vh - $navbarHeight);
     padding: $space-1 $space-1-5;
   }
 }

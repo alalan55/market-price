@@ -30,7 +30,7 @@ export default {
     max-width: 80%;
 
     h2 {
-      color: $pink-4;
+      color: $dark-aqua-1;
       font-size: 2.5em;
       margin: $space-0-5 0;
     }
@@ -38,7 +38,7 @@ export default {
     span {
       font-weight: 600;
       font-size: 1.2em;
-      color: $pink-3;
+      color: $dark-aqua-1;
     }
   }
 }

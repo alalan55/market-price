@@ -34,7 +34,7 @@ figure {
   .number {
     bottom: -11px;
     right: -10px;
-    background: $pink-4;
+    background: $dark-aqua-1;
     position: absolute;
     color: white;
     width: 20px;

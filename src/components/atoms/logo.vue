@@ -23,7 +23,7 @@ export default {};
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: $pink-1;
+  background: $dark-aqua-1;
 
   // span{
   //     font-weight: 800;

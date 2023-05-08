@@ -71,7 +71,7 @@ products.value = useStore.$cartProducts;
     width: 100%;
     padding: $space-0-5;
     text-align: right;
-    background: $pink-1;
+    background: $dark-aqua-1;
     color: white;
     height: 45px;
     span {

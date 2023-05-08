@@ -87,7 +87,7 @@ const getSize = (s) => {
       height: 100%;
       padding: $space-0-5;
       border-radius: 10px;
-      border: 1px solid $pink-4;
+      border: 1px solid $dark-aqua-1;
 
       &:focus {
         outline: none;

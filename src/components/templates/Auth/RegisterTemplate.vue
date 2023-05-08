@@ -133,7 +133,7 @@ const submitForm = async () => {
       a {
         font-weight: 600;
         text-decoration: none;
-        color: $pink-4;
+        color: $dark-aqua-1;
       }
     }
   }
