@@ -30,6 +30,21 @@ const updateProduct = (product) => {
   buyStore.RESET_PRODUCT_TO_UPDATE();
   closeModal();
 };
+
+const months = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outrubro",
+  "Novembro",
+  "Dezembro",
+];
 </script>
 
 <template>
@@ -65,12 +80,15 @@ const updateProduct = (product) => {
     <div class="home-template__resumes">
       <div class="home-template__resumes__texts">
         <h2>Resumo</h2>
-        <!-- <span
+        <span
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nesciunt ut eaque
           delectus accusantium voluptates. Saepe, eos. Quae, maxime dolore minus commodi
           facere ipsam nisi, quas modi eum cumque sit.</span
-        > -->
-        <Accordion v-for="item in 5" :key="item"/>
+        >
+      </div>
+
+      <div class="home-template__resumes__list">
+        <Accordion v-for="item in months" :key="item" :title="item" class="item" />
       </div>
     </div>
     <!-- <ProductList class="home-template__list" @action="setProductToUpdate" />
@@ -98,8 +116,18 @@ const updateProduct = (product) => {
   }
 
   &__resumes {
-    color: $dark-aqua-1;
+    color: $light-aqua-2;
     &__texts {
+      margin: $space-2 0;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: $space-1;
+
+      .item {
+      }
     }
   }
 

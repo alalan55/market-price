@@ -1,13 +1,17 @@
 <script setup>
 import { ref } from "vue";
 
+const props = defineProps({
+    title: {type: String, default: 'Título'}
+})
+
 const showBody = ref(false);
 </script>
 
 <template>
   <div class="acc">
     <div class="acc__header">
-      <div class="left"><span>Some title here</span></div>
+      <div class="left"><span>{{props.title}}</span></div>
       <div class="right">
         <figure @click="showBody = !showBody">
           <img :src="showBody ? '/imgs/chevron-up.svg' : '/imgs/chevron-down.svg'" />
