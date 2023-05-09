@@ -54,6 +54,12 @@ const links = [
     <div class="navBar__cart">
       <Cart @click="goRoute(`resume`)" />
     </div>
+
+    <div class="navBar__hamburguer">
+      <figure>
+        <img src="/imgs/menu-icon.svg" alt="Menu fechado" />
+      </figure>
+    </div>
   </nav>
 </template>
 
@@ -131,8 +137,60 @@ const links = [
     align-items: center;
     justify-content: flex-end;
   }
+  &__hamburguer {
+    display: none;
+  }
   & > div {
     flex: 1 1 500px;
+  }
+
+  @media (max-width: 750px) {
+    // border: 2px solid red;
+    &__profile {
+      span {
+        font-size: 85%;
+      }
+    }
+
+    &__cart {
+      display: none;
+    }
+
+    &__links {
+      background: $light-aqua-1;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      bottom: 0;
+      width: 70%;
+      ul {
+        height: 100%;
+        flex-direction: column;
+        gap: $space-2;
+        li {
+          a {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+    &__hamburguer {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      figure {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
   }
 }
 </style>
