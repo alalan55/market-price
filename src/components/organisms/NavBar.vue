@@ -160,7 +160,7 @@ const links = [
       background: $light-aqua-1;
       position: fixed;
       top: 0;
-      left: -100%;
+      left: -100%; // MANIPULAR ESSE VALOR PARA O CLIQUE DO BOTÃO ABRIR E FECHAR A NAVBAR
       bottom: 0;
       width: 70%;
       ul {
